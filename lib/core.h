@@ -12,22 +12,33 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//Structs y globales
+//Structs
 typedef struct {
     unsigned max_teams;
     int defaultBugdet;
     unsigned maxplayersperteam;
 }config_log;
 
+typedef struct{
+
+}football_player;
+
+//Globales de confg
 config_log configuration;
 FILE *CONFIGFILE;
 //Funciones
+
+//Llama a los restauradores de cada struct (fisica a RAM)
+void data_recovery(){
+
+}
+
+//Restaura configuracion
 void config_restorer(){
 
     CONFIGFILE=fopen("config/configfile.txt","r");
     assert(CONFIGFILE!=NULL);
     int lineaux;
-
     for (int i = 0; i < 3; ++i) {//siempre vamos a te ner 3 parametros de configuracion
         fscanf(CONFIGFILE,"%d",&lineaux);
         if(i==0){
@@ -42,8 +53,10 @@ void config_restorer(){
 
     }
     fclose(CONFIGFILE);
+
 };//ok
 
+//Nos permite editar la configuracion de la liga
 void config_changer(){
     //Basicamente requiere tener la configuracion en su estructura cargada
     assert((configuration.maxplayersperteam!=0&&configuration.maxplayersperteam!=0&&configuration.defaultBugdet!=0));
@@ -78,6 +91,7 @@ void config_changer(){
 
 };//ok
 
+//Finaliza la ejecucion de un programa
 void end_execution(){exit(0);}
 
 #define MP2021_CORE_H
