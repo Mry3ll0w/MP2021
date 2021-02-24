@@ -34,7 +34,7 @@ void data_recovery(){
 }
 
 //Restaura configuracion
-void config_restorer(){
+void Core_config_restorer(){
 
     CONFIGFILE=fopen("config/configfile.txt","r");
     assert(CONFIGFILE!=NULL);
@@ -57,7 +57,7 @@ void config_restorer(){
 };//ok
 
 //Nos permite editar la configuracion de la liga
-void config_changer(){
+void Core_config_changer(){
     //Basicamente requiere tener la configuracion en su estructura cargada
     assert((configuration.maxplayersperteam!=0&&configuration.maxplayersperteam!=0&&configuration.defaultBugdet!=0));
     CONFIGFILE=fopen("config/configfile.txt","w");
@@ -92,7 +92,7 @@ void config_changer(){
 };//ok
 
 //Finaliza la ejecucion de un programa
-void end_execution(){exit(0);}
+void Core_end_execution(){exit(0);}
 
 #define MP2021_CORE_H
 
