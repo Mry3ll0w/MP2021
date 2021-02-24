@@ -19,9 +19,37 @@ typedef struct {
     unsigned maxplayersperteam;
 }config_log;
 
+typedef struct {
+    char id[2];
+    char nombre[20];
+}team;
+
 typedef struct{
+    char id[2];
+    char id_team[2];
+    char nombre[20];
+    int precio;
+    int valoracion; //default 
+    char id_plantilla[3];// se asigna 000 de predetermindo
 
 }football_player;
+
+typedef struct{
+    char id[2];
+    char nombre[20];
+    char name_tag[5];
+    char password[8];
+    char role;//P articipante, C ronista, A dmim
+
+}user;
+
+typedef struct{
+    char id_propietario[2]; //debe coincidir con user.id
+    char id[3];
+    char nombre[30];
+    int presupuesto; //se carga el presupuesto por defecto de config.txt
+    int valoracion_total;
+}planter;
 
 //Globales de confg
 config_log configuration;
