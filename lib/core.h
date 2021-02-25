@@ -17,6 +17,10 @@ typedef struct {
     unsigned max_teams;
     int defaultBugdet;
     unsigned maxplayersperteam;
+    unsigned football_player_counter;
+    unsigned user_counter;
+    unsigned team_counter;
+    unsigned planter_counter;
 }config_log;
 
 typedef struct {
@@ -54,11 +58,43 @@ typedef struct{
 //Globales de confg
 config_log configuration;
 FILE *CONFIGFILE;
+football_player *jugadores;
 //Funciones
 
 //Llama a los restauradores de cada struct (fisica a RAM)
 void data_recovery(){
 
+}
+
+//Recupera las instancias de los jugadores
+void Core_football_players_recovery(){
+    
+    assert(configuration.football_player_counter!=0);
+    FILE *players_file;
+    players_file=fopen("data/Futbolistas.txt", "r");
+    jugadores = malloc(sizeof(football_player)*configuration.football_player_counter);
+
+    for (unsigned int i= 0; i < configuration.football_player_counter; i++)
+    {
+        //Se hace a lo bruto ya que siempre sera asignado igual
+        fscanf(players_file,"%s",&jugadores[i].id);
+        //comprobar que coincide con id equipos
+        fscanf(players_file,"%s",&jugadores[i].id_team);
+        fscanf(players_file,"%s",&jugadores[i].nombre);
+        fscanf(players_file,"%d",&jugadores[i].precio);
+        fscanf(players_file,"%d",&jugadores[i].valoracion);
+        //Comprobar que coincide con plantillas existentes
+        fscanf(players_file,"%s",&jugadores[i].id_plantilla);
+
+        printf("%s\n",jugadores[i].id);
+        printf("%sº\n",jugadores[i].id_team);
+        printf("%s\n",jugadores[i].nombre);
+        printf("%d\n",jugadores[i].precio);
+        printf("%d\n",jugadores[i].valoracion);
+        printf("%s\n",jugadores[i].id_plantilla);
+        
+    }
+    
 }
 
 //Restaura configuracion
@@ -67,7 +103,7 @@ void Core_config_restorer(){
     CONFIGFILE=fopen("config/configfile.txt","r");
     assert(CONFIGFILE!=NULL);
     int lineaux;
-    for (int i = 0; i < 3; ++i) {//siempre vamos a te ner 3 parametros de configuracion
+    for (int i = 0; i < 7; ++i) {//siempre vamos a te ner 3 parametros de configuracion
         fscanf(CONFIGFILE,"%d",&lineaux);
         if(i==0){
             configuration.max_teams=lineaux;
@@ -75,8 +111,20 @@ void Core_config_restorer(){
         else if(i==1){
             configuration.defaultBugdet=lineaux;
         }
-        else{
+        else if(i==2){
             configuration.maxplayersperteam=lineaux;
+        }
+        else if(i==3){
+            configuration.football_player_counter=lineaux;
+        }
+        else if(i==4){
+            configuration.user_counter=lineaux;
+        }
+        else if(i==5){
+            configuration.team_counter=lineaux;
+        }
+        else if(i==6){
+            configuration.planter_counter=lineaux;
         }
 
     }
@@ -115,6 +163,15 @@ void Core_config_changer(){
     fprintf(CONFIGFILE,"%i",configuration.defaultBugdet);
     fprintf(CONFIGFILE,"%c",'\n');
     fprintf(CONFIGFILE,"%i",configuration.maxplayersperteam);
+    fprintf(CONFIGFILE,"%c",'\n');
+    fprintf(CONFIGFILE,"%i",configuration.football_player_counter);
+    fprintf(CONFIGFILE,"%c",'\n');
+    fprintf(CONFIGFILE,"%i",configuration.user_counter);
+    fprintf(CONFIGFILE,"%c",'\n');
+    fprintf(CONFIGFILE,"%i",configuration.team_counter);
+    fprintf(CONFIGFILE,"%c",'\n');
+    fprintf(CONFIGFILE,"%i",configuration.planter_counter);
+    
     fclose(CONFIGFILE);
 
 };//ok
