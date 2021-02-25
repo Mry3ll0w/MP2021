@@ -7,7 +7,7 @@
 
 #ifndef MP2021_CORE_H
 
-
+#include <string.h>
 #include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -31,7 +31,7 @@ typedef struct {
 typedef struct{
     char id[2];
     char id_team[2];
-    char nombre[20];
+    char nombre[20];//maximo de 20
     int precio;
     int valoracion; //default 
     char id_plantilla[3];// se asigna 000 de predetermindo
@@ -59,7 +59,12 @@ typedef struct{
 config_log configuration;
 FILE *CONFIGFILE;
 football_player *jugadores;
-//Funciones
+
+void data_recovery();
+void Core_football_players_recovery();
+void Core_config_restorer();
+void Core_config_changer();
+void Core_end_execution();
 
 //Llama a los restauradores de cada struct (fisica a RAM)
 void data_recovery(){
@@ -68,34 +73,36 @@ void data_recovery(){
 
 //Recupera las instancias de los jugadores
 void Core_football_players_recovery(){
-    
     assert(configuration.football_player_counter!=0);
     FILE *players_file;
     players_file=fopen("data/Futbolistas.txt", "r");
     jugadores = malloc(sizeof(football_player)*configuration.football_player_counter);
-
-    for (unsigned int i= 0; i < configuration.football_player_counter; i++)
-    {
+    for (int i = 0; i < configuration.football_player_counter; ++i) {
         //Se hace a lo bruto ya que siempre sera asignado igual
-        fscanf(players_file,"%s",&jugadores[i].id);
+        fscanf(players_file,"%s",jugadores[i].id);
         //comprobar que coincide con id equipos
-        fscanf(players_file,"%s",&jugadores[i].id_team);
-        fscanf(players_file,"%s",&jugadores[i].nombre);
+        fscanf(players_file,"%s",jugadores[i].id_team);
+        fscanf(players_file,"%s",jugadores[i].nombre);
+        fscanf(players_file,"%s",jugadores[i].id_plantilla);
         fscanf(players_file,"%d",&jugadores[i].precio);
         fscanf(players_file,"%d",&jugadores[i].valoracion);
         //Comprobar que coincide con plantillas existentes
-        fscanf(players_file,"%s",&jugadores[i].id_plantilla);
 
-        printf("%s\n",jugadores[i].id);
-        printf("%sº\n",jugadores[i].id_team);
+
+        printf("%s\n",jugadores[i].id);//Solo sirven los 2 primeros digitos
+        printf("%s\n",jugadores[i].id_team);//Solo sirven los 2 primeros digitos
         printf("%s\n",jugadores[i].nombre);
+        printf("%s\n",jugadores[i].id_plantilla);
         printf("%d\n",jugadores[i].precio);
         printf("%d\n",jugadores[i].valoracion);
-        printf("%s\n",jugadores[i].id_plantilla);
-        
+
     }
-    
+    fclose(players_file);
+
 }
+
+
+
 
 //Restaura configuracion
 void Core_config_restorer(){
