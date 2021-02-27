@@ -24,33 +24,33 @@ typedef struct {
 }config_log;
 
 typedef struct {
-    char id[2];
-    char nombre[20];
+    char id[3];
+    char nombre[21];
 }team;
 
 typedef struct{
-    char id[2];
-    char id_team[2];
-    char nombre[20];//maximo de 20
+    char id[3];
+    char id_team[3];
+    char nombre[21];//maximo de 20
     int precio;
     int valoracion; //default 
-    char id_plantilla[3];// se asigna 000 de predetermindo
+    char id_plantilla[4];// se asigna 000 de predetermindo
 
 }football_player;
 
 typedef struct{
-    char id[2];
-    char nombre[20];
-    char name_tag[5];
-    char password[8];
+    char id[3];
+    char nombre[21];
+    char name_tag[6];
+    char password[9];
     char role;//P articipante, C ronista, A dmim
 
 }user;
 
 typedef struct{
-    char id_propietario[2]; //debe coincidir con user.id
-    char id[3];
-    char nombre[30];
+    char id_propietario[4]; //debe coincidir con user.id
+    char id[5];
+    char nombre[32];
     int presupuesto; //se carga el presupuesto por defecto de config.txt
     int valoracion_total;
 }planter;
@@ -58,22 +58,29 @@ typedef struct{
 //Globales de confg
 config_log configuration;
 FILE *CONFIGFILE;
+FILE *USERFILE;
 football_player *jugadores;
+user *usuarios;
 
-void data_recovery();
+//Cabeceras de Funcion
+void Core_data_recovery();
 void Core_football_players_recovery();
+void Core_Users_recovery();
 void Core_config_restorer();
 void Core_config_changer();
 void Core_end_execution();
 
-//Llama a los restauradores de cada struct (fisica a RAM)
-void data_recovery(){
 
+
+//Llama a los restauradores de cada struct (fisica a RAM)
+void Core_data_recovery(){
+    Core_config_restorer();
+    Core_football_players_recovery();
 }
 
 //Recupera las instancias de los jugadores
 void Core_football_players_recovery(){
-    assert(configuration.football_player_counter!=0);
+    assert(configuration.football_player_counter!=0 && "No se ha cargado de forma correcta el archivo de configuracion");
     FILE *players_file;
     players_file=fopen("data/Futbolistas.txt", "r");
     jugadores = malloc(sizeof(football_player)*configuration.football_player_counter);
@@ -88,18 +95,10 @@ void Core_football_players_recovery(){
         fscanf(players_file,"%d",&jugadores[i].valoracion);
         //Comprobar que coincide con plantillas existentes
 
-
-        printf("%s\n",jugadores[i].id);//Solo sirven los 2 primeros digitos
-        printf("%s\n",jugadores[i].id_team);//Solo sirven los 2 primeros digitos
-        printf("%s\n",jugadores[i].nombre);
-        printf("%s\n",jugadores[i].id_plantilla);
-        printf("%d\n",jugadores[i].precio);
-        printf("%d\n",jugadores[i].valoracion);
-
     }
     fclose(players_file);
 
-}
+}//OK
 
 
 
@@ -142,9 +141,9 @@ void Core_config_restorer(){
 //Nos permite editar la configuracion de la liga
 void Core_config_changer(){
     //Basicamente requiere tener la configuracion en su estructura cargada
-    assert((configuration.maxplayersperteam!=0&&configuration.maxplayersperteam!=0&&configuration.defaultBugdet!=0));
+    assert((configuration.maxplayersperteam!=0&&configuration.maxplayersperteam!=0&&configuration.defaultBugdet!=0)&&"No se ha cargado de forma correcta el archivo de configuracion");
     CONFIGFILE=fopen("config/configfile.txt","w");
-    assert(CONFIGFILE!=NULL);
+    assert(CONFIGFILE!=NULL&&"No se ha cargado de forma correcta el archivo de configuracion");
     int selection;
     printf("Selecciona el cambio que quieres hacer:\n1)Maximo de equipos\n2)Presupuesto base\n3)Maximo de jugadores por equipo\n");
     scanf("%d",&selection);
@@ -185,6 +184,37 @@ void Core_config_changer(){
 
 //Finaliza la ejecucion de un programa
 void Core_end_execution(){exit(0);}
+
+//Nos permite la carga de datos a la estructura de los usuarios
+void Core_Users_recovery() {
+    /*Orden Lectura
+    char id[3];
+    char nombre[20];
+    char name_tag[5];
+    char password[8];
+    char role;//P articipante, C ronista, A dmim
+    */
+    assert(configuration.user_counter!=0 && "No se ha cargado de forma correcta el archivo de configuracion");
+    USERFILE = fopen("data/Usuarios.txt","r");
+    assert(USERFILE!=NULL && "No se ha podido abrir/encontrar el archivo de Usuarios.txt");
+    usuarios = malloc(sizeof(user)*configuration.user_counter);
+    for (int i = 0; i < configuration.user_counter; ++i) {
+        fscanf(USERFILE, "%s",usuarios[i].id);
+        fscanf(USERFILE, "%s",usuarios[i].nombre);
+        fscanf(USERFILE, "%s",usuarios[i].name_tag);
+        fscanf(USERFILE, "%s",usuarios[i].password);
+        fscanf(USERFILE, "%c",&usuarios[i].role);
+
+        printf("%s\n",usuarios[i].id);
+        printf("%s\n",usuarios[i].name_tag);
+        printf("%s\n",usuarios[i].nombre);
+        printf("%s\n",usuarios[i].password);
+        printf("%c\n",usuarios[i].role);
+    }
+    fclose(USERFILE);
+}
+
+
 
 #define MP2021_CORE_H
 

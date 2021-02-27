@@ -3,8 +3,7 @@
 
 int main() {
     //system("music.bat");
-    Core_config_restorer();
-    Core_football_players_recovery();
-
+    Core_data_recovery();
+    Core_Users_recovery();
     return 0;
 }
