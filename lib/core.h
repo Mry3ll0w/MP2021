@@ -65,11 +65,17 @@ user *usuarios;
 
 //Cabeceras de Funcion
 void Core_data_recovery();
-void Core_data_update();
+void Core_data_update();//Su uso conlleva un update general de los ficheros
 void Core_football_players_recovery();
 void Core_football_players_update();
 void Core_Users_recovery();
 void Core_Users_update();
+void Core_planters_recovery();//NO implementada
+void Core_planters_update();//NO implementada
+void Core_teams_recovery();//NO implementada
+void Core_teams_update();//NO implementada
+unsigned Core_config_options_menu();//NO implementada
+unsigned Core_login();//NO implementada
 void Core_config_restorer();
 void Core_config_changer();
 void Core_end_execution();
@@ -186,7 +192,7 @@ void Core_config_changer(){
 
 };//ok
 
-//Finaliza la ejecucion de un programa
+//Finaliza la ejecucion de una funcion
 void Core_end_execution(){exit(0);}
 
 //Nos permite la carga de datos a la estructura de los usuarios
@@ -219,6 +225,7 @@ void Core_Users_recovery() {
     fclose(USERFILE);
 }
 
+//Refresca los datos de los jugadores de los ficheros por medio de los usados en memoria
 void Core_football_players_update() {
     assert(jugadores!=NULL && "La estructura de los jugadores no ha sido inicializada de forma correcta\n");
     PLAYERFILE=fopen("data/jugadores.txt","w");
@@ -242,13 +249,24 @@ void Core_football_players_update() {
     fclose(PLAYERFILE);
 }
 
+//Refresca los datos de los ficheros de usuarios usando los existentes en memoria
 void Core_Users_update() {
     assert(configuration.user_counter!=0 && "No se ha leido correctamente el numero maximo de jugadores");
     USERFILE=fopen("data/usuarios.txt","w");
     assert(USERFILE!=NULL && "Ha fallado la apertura del fichero Usuarios.txt");
     for (int i = 0; i < configuration.user_counter ; ++i) {
-        
+        fprintf(USERFILE,"%s",usuarios[i].id);
+        fprintf(USERFILE,"%c",'\n');
+        fprintf(USERFILE,"%s",usuarios[i].nombre);
+        fprintf(USERFILE,"%c",'\n');
+        fprintf(USERFILE,"%s",usuarios[i].name_tag);
+        fprintf(USERFILE,"%c",'\n');
+        fprintf(USERFILE,"%s",usuarios[i].password);
+        fprintf(USERFILE,"%c",'\n');
+        fprintf(USERFILE,"%s",usuarios[i].role);
+        fprintf(USERFILE,"%c",'\n');
     }
+    fclose(USERFILE);
 }
 //Cuando se implemente el de modificar en el modulo jugadores comprobar
 
