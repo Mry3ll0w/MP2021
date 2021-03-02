@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+D:/Proyectos/MP2021/lib/core.c
+core.h
+D:/Proyectos/MP2021/lib/core.h
+
 D:/Proyectos/MP2021/lib/core.h
 string.h
 -
