@@ -54,6 +54,12 @@ typedef struct{
     int valoracion_total;
 }planter;
 
+typedef struct{
+    char id_player[3];
+    char id_planter[3];
+
+}player_planter;
+
 //Globales de confg
 FILE *CONFIGFILE;
 FILE *PLAYERFILE;
@@ -75,8 +81,8 @@ void Core_Users_recovery();
 void Core_Users_update();
 void Core_planters_recovery();
 void Core_planters_update();
-void Core_teams_recovery();//NO implementada
-void Core_teams_update();//NO implementada
+void Core_teams_recovery();
+void Core_teams_update();
 unsigned Core_config_options_menu();//NO implementada
 unsigned Core_login();//NO implementada
 void Core_planters_player_recovery();//NO implementada

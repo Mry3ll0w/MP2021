@@ -8,6 +8,7 @@ void Core_data_recovery(){
     Core_football_players_recovery();
     Core_Users_recovery();
     Core_planters_recovery();
+    Core_teams_recovery();
 }
 
 //Recupera las instancias de los jugadores
@@ -252,9 +253,30 @@ void Core_teams_recovery() {
     assert(TEAMFILE!=NULL && "Fallo en la lectura del fichero");
     equipos =malloc(sizeof(team)*configuration.team_counter);
     for (int i = 0; i < configuration.team_counter; i++) {
-        fscanf(equipos,"%s",equipos[i].id);
-        fscanf();
+        fscanf(TEAMFILE,"%s",equipos[i].id);
+        fscanf(TEAMFILE,"%s",equipos[i].nombre);
+        /*
+        printf("%s\n",equipos[i].id);
+        printf("%s\n",equipos[i].nombre);
+        */
     }
+    fclose(TEAMFILE);
+
+}
+
+void Core_teams_update() {
+    assert(configuration.team_counter!=0 && "No se ha cargado de forma correcta el archivo de configuracion");
+    TEAMFILE= fopen("data/equipos.txt","w");
+    assert(TEAMFILE!=NULL && "No se ha podido localizar el archivo equipos.txt");
+    for(int i= 0; i < configuration.team_counter; i++){
+        fprintf(TEAMFILE,"%s",equipos[i].id);
+        fprintf(TEAMFILE,"%c",'\n');
+        fprintf(TEAMFILE,"%s",equipos[i].nombre);
+        fprintf(TEAMFILE,"%c",'\n');
+    }
+    fclose(TEAMFILE);
+    Core_teams_recovery();
+
 }
 //Cuando se implemente el de modificar en el modulo jugadores comprobar
 
