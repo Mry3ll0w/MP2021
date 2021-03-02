@@ -55,14 +55,16 @@ typedef struct{
 }planter;
 
 //Globales de confg
-config_log configuration;
 FILE *CONFIGFILE;
 FILE *PLAYERFILE;
 FILE *USERFILE;
 FILE *PLANTERFILE;
+FILE *TEAMFILE;
 football_player *jugadores;
+config_log configuration;
 user *usuarios;
 planter *plantillas;
+team *equipos;
 
 //Cabeceras de Funcion
 void Core_data_recovery();
@@ -72,7 +74,7 @@ void Core_football_players_update();
 void Core_Users_recovery();
 void Core_Users_update();
 void Core_planters_recovery();
-void Core_planters_update();//NO implementada
+void Core_planters_update();
 void Core_teams_recovery();//NO implementada
 void Core_teams_update();//NO implementada
 unsigned Core_config_options_menu();//NO implementada
@@ -83,6 +85,7 @@ void Core_config_restorer();
 void Core_config_changer();
 void Core_end_execution();
 void Core_close_sessions();
+//Crear Una funcion que contabilice el vacio de las eliminadas
 
 
 //funciones
