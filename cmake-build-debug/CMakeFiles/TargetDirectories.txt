@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 D:/Proyectos/MP2021/cmake-build-debug/CMakeFiles/MP2021.dir
 D:/Proyectos/MP2021/cmake-build-debug/CMakeFiles/edit_cache.dir
 D:/Proyectos/MP2021/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+=======
+D:/MP Trabajo/MP2021/cmake-build-debug/CMakeFiles/MP2021.dir
+D:/MP Trabajo/MP2021/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/MP Trabajo/MP2021/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+>>>>>>> main
