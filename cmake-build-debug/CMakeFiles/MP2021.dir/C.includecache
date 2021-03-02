@@ -20,9 +20,17 @@ stdio.h
 stdlib.h
 -
 
+<<<<<<< HEAD
 C:/Users/marco/Desktop/Universidad Marcos/PRIMERO/PENDIENTES/MP/PROYECTO GitKraken/MP2021/main.c
 stdio.h
 -
 lib/core.h
 C:/Users/marco/Desktop/Universidad Marcos/PRIMERO/PENDIENTES/MP/PROYECTO GitKraken/MP2021/lib/core.h
+=======
+D:/Proyectos/MP2021/main.c
+stdio.h
+-
+lib/core.h
+D:/Proyectos/MP2021/lib/core.h
+>>>>>>> main
 

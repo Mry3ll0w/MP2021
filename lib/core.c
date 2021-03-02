@@ -211,24 +211,50 @@ void Core_planters_recovery() {
         fscanf(PLANTERFILE,"%s",plantillas[i].nombre);
         fscanf(PLANTERFILE,"%d",&plantillas[i].presupuesto);
         fscanf(PLANTERFILE,"%d",&plantillas[i].valoracion_total);
-
+        /*
         printf("%s\n",plantillas[i].id_propietario);
         printf("%s\n",plantillas[i].id);
         printf("%s\n",plantillas[i].nombre);
         printf("%d\n",plantillas[i].presupuesto);
         printf("%d\n",plantillas[i].valoracion_total);
+        */
     }
     fclose(PLANTERFILE);
 }
 
 void Core_planters_update() {
-
-
+    assert(configuration.planter_counter!=0 && "Fallo en la lectura de la configuracion inicial");
+    PLANTERFILE=fopen("data/Plantilla.txt","w");
+    for (int i = 0; i < configuration.planter_counter; ++i) {
+        fprintf(PLANTERFILE,"%s",plantillas[i].id_propietario);
+        fprintf(PLANTERFILE,"%c",'\n');
+        fprintf(PLANTERFILE,"%s",plantillas[i].id);
+        fprintf(PLANTERFILE,"%c",'\n');
+        fprintf(PLANTERFILE,"%s",plantillas[i].nombre);
+        fprintf(PLANTERFILE,"%c",'\n');
+        fprintf(PLANTERFILE,"%d",plantillas[i].presupuesto);
+        fprintf(PLANTERFILE,"%c",'\n');
+        fprintf(PLANTERFILE,"%d",plantillas[i].valoracion_total);
+        fprintf(PLANTERFILE,"%c",'\n');
+    }
+    fclose(PLANTERFILE);
+    Core_planters_recovery();
 }
 
 void Core_close_sessions() {
     exit(2);
     Core_data_update();
+}
+
+void Core_teams_recovery() {
+    assert(configuration.team_counter!=0 && "el numero de equipos existentes no se ha leido de forma correcta");
+    TEAMFILE = fopen("data/Equipos.txt","r");
+    assert(TEAMFILE!=NULL && "Fallo en la lectura del fichero");
+    equipos =malloc(sizeof(team)*configuration.team_counter);
+    for (int i = 0; i < configuration.team_counter; i++) {
+        fscanf(equipos,"%s",equipos[i].id);
+        fscanf();
+    }
 }
 //Cuando se implemente el de modificar en el modulo jugadores comprobar
 
