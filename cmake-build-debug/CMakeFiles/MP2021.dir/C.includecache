@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-D:/Proyectos/MP2021/lib/core.c
+C:/Users/marco/Desktop/Universidad Marcos/PRIMERO/PENDIENTES/MP/PROYECTO GitKraken/MP2021/lib/core.c
 core.h
-D:/Proyectos/MP2021/lib/core.h
+C:/Users/marco/Desktop/Universidad Marcos/PRIMERO/PENDIENTES/MP/PROYECTO GitKraken/MP2021/lib/core.h
 
-D:/Proyectos/MP2021/lib/core.h
+C:/Users/marco/Desktop/Universidad Marcos/PRIMERO/PENDIENTES/MP/PROYECTO GitKraken/MP2021/lib/core.h
 string.h
 -
 assert.h
@@ -19,4 +19,10 @@ stdio.h
 -
 stdlib.h
 -
+
+C:/Users/marco/Desktop/Universidad Marcos/PRIMERO/PENDIENTES/MP/PROYECTO GitKraken/MP2021/main.c
+stdio.h
+-
+lib/core.h
+C:/Users/marco/Desktop/Universidad Marcos/PRIMERO/PENDIENTES/MP/PROYECTO GitKraken/MP2021/lib/core.h
 
