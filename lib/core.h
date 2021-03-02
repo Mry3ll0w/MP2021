@@ -34,7 +34,6 @@ typedef struct{
     char nombre[21];//maximo de 20
     int precio;
     int valoracion; //default
-    char id_plantilla[4];// se asigna 000 de predetermindo
 
 }football_player;
 
@@ -63,6 +62,7 @@ FILE *USERFILE;
 FILE *PLANTERFILE;
 football_player *jugadores;
 user *usuarios;
+planter *plantillas;
 
 //Cabeceras de Funcion
 void Core_data_recovery();
@@ -71,15 +71,19 @@ void Core_football_players_recovery();
 void Core_football_players_update();
 void Core_Users_recovery();
 void Core_Users_update();
-void Core_planters_recovery();//NO implementada
+void Core_planters_recovery();
 void Core_planters_update();//NO implementada
 void Core_teams_recovery();//NO implementada
 void Core_teams_update();//NO implementada
 unsigned Core_config_options_menu();//NO implementada
 unsigned Core_login();//NO implementada
+void Core_planters_player_recovery();//NO implementada
+void Core_planters_player_update();//NO implementada
 void Core_config_restorer();
 void Core_config_changer();
 void Core_end_execution();
+void Core_close_sessions();
+
 
 //funciones
 #endif //MP2021_CORE_H

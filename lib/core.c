@@ -7,6 +7,7 @@ void Core_data_recovery(){
     Core_config_restorer();
     Core_football_players_recovery();
     Core_Users_recovery();
+    Core_planters_recovery();
 }
 
 //Recupera las instancias de los jugadores
@@ -20,12 +21,10 @@ void Core_football_players_recovery(){
         //comprobar que coincide con id equipos
         fscanf(PLAYERFILE,"%s",jugadores[i].id_team);
         fscanf(PLAYERFILE,"%s",jugadores[i].nombre);
-        fscanf(PLAYERFILE,"%s",jugadores[i].id_plantilla);
         fscanf(PLAYERFILE,"%d",&jugadores[i].precio);
         fscanf(PLAYERFILE,"%d",&jugadores[i].valoracion);
-        //Comprobar que coincide con plantillas existentes
-
     }
+
     fclose(PLAYERFILE);
 
 }//OK
@@ -109,7 +108,7 @@ void Core_config_changer(){
     fprintf(CONFIGFILE,"%i",configuration.planter_counter);
 
     fclose(CONFIGFILE);
-
+    Core_config_restorer();
 };//ok
 
 //Finaliza la ejecucion de una funcion
@@ -162,11 +161,11 @@ void Core_football_players_update() {
         fprintf(PLAYERFILE,"%c",'\n');
         fprintf(PLAYERFILE,"%d",jugadores[i].valoracion);
         fprintf(PLAYERFILE,"%c",'\n');
-        fprintf(PLAYERFILE,"%s",jugadores[i].id_plantilla);
-        fprintf(PLAYERFILE,"%c",'\n');
+
 
     }
     fclose(PLAYERFILE);
+    Core_football_players_update();
 }
 
 //Refresca los datos de los ficheros de usuarios usando los existentes en memoria
@@ -187,6 +186,7 @@ void Core_Users_update() {
         fprintf(USERFILE,"%c",'\n');
     }
     fclose(USERFILE);
+    Core_Users_recovery();
 }
 
 void Core_planters_recovery() {
@@ -196,16 +196,39 @@ void Core_planters_recovery() {
         char id[5];
         char nombre[32];
         int presupuesto; //se carga el presupuesto por defecto de config.txt
-        int valoracion_total;
+        int valoracion_total;//Default a 0
         }planter;
      */
     assert(configuration.planter_counter!=0 && "NO se ha podido leer de forma correcta la configuracion");
     PLANTERFILE = fopen("data/Plantilla.txt","r");
     assert(PLANTERFILE!=NULL && "Fallo de accesso del archivo de plantilla");
-    for (int i = 0; i < configuration.maxplayersperteam ; ++i) {
-        fscanf();
-    }
+    assert(configuration.defaultBugdet!=0 && "Se ha leido de forma incorrecta el presupuesto");
+    plantillas=malloc(sizeof(planter)*configuration.planter_counter);
 
+    for (int i = 0; i < configuration.planter_counter ; ++i) {
+        fscanf(PLANTERFILE, "%s",plantillas[i].id_propietario);
+        fscanf(PLANTERFILE,"%s",plantillas[i].id);
+        fscanf(PLANTERFILE,"%s",plantillas[i].nombre);
+        fscanf(PLANTERFILE,"%d",&plantillas[i].presupuesto);
+        fscanf(PLANTERFILE,"%d",&plantillas[i].valoracion_total);
+
+        printf("%s\n",plantillas[i].id_propietario);
+        printf("%s\n",plantillas[i].id);
+        printf("%s\n",plantillas[i].nombre);
+        printf("%d\n",plantillas[i].presupuesto);
+        printf("%d\n",plantillas[i].valoracion_total);
+    }
+    fclose(PLANTERFILE);
+}
+
+void Core_planters_update() {
+
+
+}
+
+void Core_close_sessions() {
+    exit(2);
+    Core_data_update();
 }
 //Cuando se implemente el de modificar en el modulo jugadores comprobar
 
