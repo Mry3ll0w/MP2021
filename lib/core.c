@@ -169,26 +169,6 @@ void Core_football_players_update() {
     Core_football_players_update();
 }
 
-//Refresca los datos de los ficheros de usuarios usando los existentes en memoria
-void Core_Users_update() {
-    assert(configuration.user_counter!=0 && "No se ha leido correctamente el numero maximo de jugadores");
-    USERFILE=fopen("data/usuarios.txt","w");
-    assert(USERFILE!=NULL && "Ha fallado la apertura del fichero Usuarios.txt");
-    for (int i = 0; i < configuration.user_counter ; ++i) {
-        fprintf(USERFILE,"%s",usuarios[i].id);
-        fprintf(USERFILE,"%c",'\n');
-        fprintf(USERFILE,"%s",usuarios[i].nombre);
-        fprintf(USERFILE,"%c",'\n');
-        fprintf(USERFILE,"%s",usuarios[i].name_tag);
-        fprintf(USERFILE,"%c",'\n');
-        fprintf(USERFILE,"%s",usuarios[i].password);
-        fprintf(USERFILE,"%c",'\n');
-        fprintf(USERFILE,"%s",usuarios[i].role);
-        fprintf(USERFILE,"%c",'\n');
-    }
-    fclose(USERFILE);
-    Core_Users_recovery();
-}
 
 void Core_planters_recovery() {
     /*
@@ -291,8 +271,93 @@ unsigned Core_config_options_menu(){
     printf("1) Registro de un nuevo Usuario\n");
     printf("2) Acceder al sistema\n");
     printf("Selecciona la opcion: ");
-    scanf("%d",&opcion);
+        scanf("%d",&opcion);
     return opcion;
 
 
 }
+
+void Core_User_Register() {
+    assert(configuration.user_counter!=0 && "NO se ha leido correctamente el fichero");
+    USERFILE = fopen("data/usuarios.txt","a");
+    assert(USERFILE!=NULL && "No se ha podido iniciar el fichero de usuarios");
+    user temp_user;
+    printf("Introduce los datos del nuevo usuario\n");
+    printf("Id del usuario: ");
+    scanf("%s",temp_user.id);
+    printf("\nNombre del usuario: ");
+    scanf("%s",temp_user.nombre);
+    printf("Nickname: ");
+    scanf("%s",temp_user.name_tag);
+    printf("\nIntroduce la password: ");
+    scanf("%s",temp_user.password);
+    printf("\nIntroduce el rol que tendra: ");
+    scanf("%s",temp_user.role);
+    //Escritura en el fichero
+    fprintf(USERFILE,"%s",temp_user.id);
+    fprintf(USERFILE,"%c",'\n');
+    fprintf(USERFILE,"%s",temp_user.nombre);
+    fprintf(USERFILE,"%c",'\n');
+    fprintf(USERFILE,"%s",temp_user.name_tag);
+    fprintf(USERFILE,"%c",'\n');
+    fprintf(USERFILE,"%s",temp_user.password);
+    fprintf(USERFILE,"%c",'\n');
+    fprintf(USERFILE,"%s",temp_user.role);
+    fprintf(USERFILE,"%c",'\n');
+    fclose(USERFILE);
+    //Actualizamos los ficheros
+    configuration.user_counter++;
+    Core_config_update();
+    Core_Users_recovery();
+
+}//ok
+
+void Core_config_update() {
+    CONFIGFILE=fopen("config/configfile.txt","w");
+    assert(CONFIGFILE!=NULL);
+    fprintf(CONFIGFILE,"%d",configuration.max_teams);
+    fprintf(CONFIGFILE,"%c",'\n');
+    fprintf(CONFIGFILE,"%d",configuration.defaultBugdet);
+    fprintf(CONFIGFILE,"%c",'\n');
+    fprintf(CONFIGFILE,"%d",configuration.maxplayersperteam);
+    fprintf(CONFIGFILE,"%c",'\n');
+    fprintf(CONFIGFILE,"%d",configuration.football_player_counter);
+    fprintf(CONFIGFILE,"%c",'\n');
+    fprintf(CONFIGFILE,"%d",configuration.user_counter);
+    fprintf(CONFIGFILE,"%c",'\n');
+    fprintf(CONFIGFILE,"%d",configuration.team_counter);
+    fprintf(CONFIGFILE,"%c",'\n');
+    fprintf(CONFIGFILE,"%d",configuration.planter_counter);
+    fprintf(CONFIGFILE,"%c",'\n');
+    fclose(CONFIGFILE);
+}
+
+unsigned Core_login() {
+    assert(configuration.user_counter!=0);
+    char id[3],password[9];
+    int found_user=-1;
+    printf("Hola , bienvenido al sistema de acceso\n");
+    ppio:
+    printf("Introduce Usuario: ");
+        scanf("%s",id);
+    for (int i = 0; i < configuration.user_counter; i++){
+        if(strcmp(usuarios[i].id,id)==0)
+            found_user=i;
+    }
+    if(found_user==-1){
+        printf("El usuario no existe, redirigiendo\n");
+        goto ppio;
+    }
+    if(found_user!=1){
+        printf("Introduce la pass de tu usuario: ");
+            scanf("%s",password);
+        if(strcmp(usuarios[found_user].password,password)==0)
+            return found_user;
+        else{
+            printf("Pass incorrecta,redirigiendo al loging\n");
+            goto ppio;
+        }
+    }
+
+}
+//ok
