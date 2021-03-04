@@ -85,6 +85,7 @@ void Core_teams_recovery();
 void Core_teams_update();
 unsigned Core_config_options_menu();//NO implementada
 unsigned Core_login();//NO implementada
+void Core_User_Register();//NO implementada
 void Core_planters_player_recovery();//NO implementada
 void Core_planters_player_update();//NO implementada
 void Core_config_restorer();

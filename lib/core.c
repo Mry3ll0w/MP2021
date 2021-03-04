@@ -279,4 +279,20 @@ void Core_teams_update() {
 
 }
 //Cuando se implemente el de modificar en el modulo jugadores comprobar
+unsigned Core_config_options_menu(){
+    /*
+        OPCIONES A RELLENAR:
+        1)Registro
+        2)Acceso al sistema
+    */
+    unsigned opcion;
+    assert(CONFIGFILE!=NULL  && "Aun no se ha inicializado los ficheros de configuracion\n");
+    printf("Bienvenido a la Liga Fantastica\n");
+    printf("1) Registro de un nuevo Usuario\n");
+    printf("2) Acceder al sistema\n");
+    printf("Selecciona la opcion: ");
+    scanf("%d",&opcion);
+    return opcion;
 
+
+}
