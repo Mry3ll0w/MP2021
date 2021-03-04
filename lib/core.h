@@ -78,17 +78,18 @@ void Core_data_update();//Su uso conlleva un update general de los ficheros
 void Core_football_players_recovery();
 void Core_football_players_update();
 void Core_Users_recovery();
-void Core_Users_update();
 void Core_planters_recovery();
 void Core_planters_update();
 void Core_teams_recovery();
 void Core_teams_update();
-unsigned Core_config_options_menu();//NO implementada
-unsigned Core_login();//NO implementada
+unsigned Core_config_options_menu();
+unsigned Core_login();
+void Core_User_Register();
 void Core_planters_player_recovery();//NO implementada
 void Core_planters_player_update();//NO implementada
 void Core_config_restorer();
 void Core_config_changer();
+void Core_config_update();
 void Core_end_execution();
 void Core_close_sessions();
 //Crear Una funcion que contabilice el vacio de las eliminadas
