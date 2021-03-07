@@ -1,13 +1,14 @@
 #include <stdio.h>
 #include "lib/core.h"
+//#include "lib/Cronista.h"
 
 int main() {
     //system("music.bat");
     unsigned exit_token=1;
     unsigned logged_user;
     Core_data_recovery();
-    Core_planters_player_recovery();
-    /*
+
+
     while (exit_token==1)
     {
         if (Core_config_options_menu()== 1)
@@ -18,10 +19,9 @@ int main() {
 
         printf("Deseas hacer alguna operacion mas?\n1)Si\t 2)No\n");
             scanf("%d",&exit_token);
-
-
+        system("cls");
     }
-    */
+
     
     
 
