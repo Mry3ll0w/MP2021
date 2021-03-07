@@ -88,8 +88,8 @@ void Core_teams_update();
 unsigned Core_config_options_menu();
 unsigned Core_login();
 void Core_User_Register();
-void Core_planters_player_recovery();//NO implementada
-void Core_planters_player_update();//NO implementada
+void Core_planters_player_recovery();
+void Core_planters_player_update();
 void Core_config_restorer();
 void Core_config_changer();
 void Core_config_update();
@@ -474,6 +474,19 @@ void Core_planters_player_recovery() {
         printf("%s\n",jug_plantilla[i].id_player);
         printf("%s\n",jug_plantilla[i].id_planter);
     }
+}
+
+void Core_planters_player_update() {
+    assert(configuration.assigned_players!=0);
+    PLANTERPLAYERFILE = fopen("data/Jugadores_Plantillas.txt","w");
+    assert(PLANTERPLAYERFILE!=NULL);
+    for (int i = 0; i < configuration.assigned_players ; ++i) {
+        fprintf(PLANTERPLAYERFILE,"%s",jug_plantilla[i].id_player);
+        fprintf(PLANTERPLAYERFILE,"%c",'\n');
+        fprintf(PLANTERPLAYERFILE,"%s",jug_plantilla[i].id_planter);
+        fprintf(PLANTERPLAYERFILE,"%c",'\n');
+    }
+    fclose(PLANTERPLAYERFILE);
 }
 //ok
 
