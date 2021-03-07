@@ -110,10 +110,12 @@ void Core_data_recovery(){
     Core_Users_recovery();
     Core_planters_recovery();
     Core_teams_recovery();
+    Core_planters_player_recovery();
 }
 
 //Recupera las instancias de los jugadores
 void Core_football_players_recovery(){
+
     assert(configuration.football_player_counter!=0 && "No se ha cargado de forma correcta el archivo de configuracion");
     PLAYERFILE=fopen("data/Futbolistas.txt", "r");
     jugadores = malloc(sizeof(football_player)*configuration.football_player_counter);

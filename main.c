@@ -6,8 +6,8 @@ int main() {
     unsigned exit_token=1;
     unsigned logged_user;
     Core_data_recovery();
-    Core_planters_player_recovery();
-    /*
+
+
     while (exit_token==1)
     {
         if (Core_config_options_menu()== 1)
@@ -21,7 +21,7 @@ int main() {
 
 
     }
-    */
+
     
     
 
