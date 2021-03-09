@@ -3,10 +3,10 @@
 #define MP2021_CRONISTA_H
 
 
-void menu_cronista(); //Imprime por pantalla un menu de cronista interactivo.
-void listar_equipos(); //Imprime por pantalla todos los nomrbes de equipos.
-void valorar_equipos(); //Permite introducir nuevas valoraciones individuales de todos los jugadores de una plantilla.
-void menu_cronista()
+void cro_menu(); //Imprime por pantalla un menu de cronista interactivo.
+void cro_listar_equipos(); //Imprime por pantalla todos los nomrbes de equipos.
+void cro_valorar_equipos(); //Permite introducir nuevas valoraciones individuales de todos los jugadores de una plantilla.
+void cro_menu()
 {
     int opcion;
     do {
@@ -41,7 +41,7 @@ void menu_cronista()
 
 }
 
-void listar_equipos()
+void cro_listar_equipos()
 {
     int i;
     printf("\tListado de todos los equipos:\n");
@@ -49,8 +49,9 @@ void listar_equipos()
     if(configuration.max_teams!=0) {
         for (i = 0; i < configuration.max_teams; ++i) {
 
-            printf("\n\t\t %i . %s\n",i, team[i].nombre);
+            printf("\t %i . %s\n",i, equipos[i].nombre);
         }
+        Core_teams_update();
     }
 
     else{
@@ -59,26 +60,27 @@ void listar_equipos()
     }
 
 }
-void valorar_equipos();
+void cro_valorar_equipos();
 {
 int i,j,opc;
 char actual_team_id[3];
 do{
-printf("\n\t Seleccione el equipo de la plantilla que quiera valorar: \n");
+printf("\t Seleccione el equipo de la plantilla que quiera valorar: \n");
 listar_equipos();
 scanf("%i",&i);
-strcpy(actual_team_id , team[i].id );
+strcpy(actual_team_id , equipos[i].id );
 system("cls");
 
-for (j = 0; j < configuration.; ++j) {
-if(strcmp(actual_team_id,football_player[j].id)==0)
+for (j = 0; j < configuration.maxplayersperteam; ++j) {
+if(strcmp(actual_team_id,jug_plantilla[j].id)==0)
 {
-printf("\n\t Nueva valoracion del jugador %s: \n", football_player[j].nombre);
-scanf("%i", football_player[j].valoracion);
+printf("\t Nueva valoracion del jugador %s: \n", jug_plantilla[j].nombre);
+scanf("%i", jug_plantilla[j].valoracion);
+Core_football_players_update();
 }
 }
-printf("\n\t 1. Valorar otra plantilla. \n");
-printf("\n\t 2. Volver al menu cronista. \n");
+printf("\t 1. Valorar otra plantilla. \n");
+printf("\t 2. Volver al menu cronista. \n");
 scanf("%i",&opc);
 system("cls");
 }while(opc!=2);
