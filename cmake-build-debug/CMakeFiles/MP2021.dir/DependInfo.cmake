@@ -4,9 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/lib/Cronista.c" "C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/cmake-build-debug/CMakeFiles/MP2021.dir/lib/Cronista.c.obj"
-  "C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/lib/core.c" "C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/cmake-build-debug/CMakeFiles/MP2021.dir/lib/core.c.obj"
-  "C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/main.c" "C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/cmake-build-debug/CMakeFiles/MP2021.dir/main.c.obj"
+  "D:/Proyectos/MP2021/main.c" "D:/Proyectos/MP2021/cmake-build-debug/CMakeFiles/MP2021.dir/main.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

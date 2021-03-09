@@ -67,10 +67,10 @@ RM = "C:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\Marcos\Desktop\Proyecto GitKraken MP 2021\MP2021"
+CMAKE_SOURCE_DIR = D:\Proyectos\MP2021
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\Marcos\Desktop\Proyecto GitKraken MP 2021\MP2021\cmake-build-debug"
+CMAKE_BINARY_DIR = D:\Proyectos\MP2021\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -99,9 +99,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Marcos\Desktop\Proyecto GitKraken MP 2021\MP2021\cmake-build-debug\CMakeFiles" "C:\Users\Marcos\Desktop\Proyecto GitKraken MP 2021\MP2021\cmake-build-debug\CMakeFiles\progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Proyectos\MP2021\cmake-build-debug\CMakeFiles D:\Proyectos\MP2021\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Marcos\Desktop\Proyecto GitKraken MP 2021\MP2021\cmake-build-debug\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Proyectos\MP2021\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -142,60 +142,6 @@ MP2021/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MP2021.dir\build.make CMakeFiles/MP2021.dir/build
 .PHONY : MP2021/fast
 
-lib/Cronista.obj: lib/Cronista.c.obj
-
-.PHONY : lib/Cronista.obj
-
-# target to build an object file
-lib/Cronista.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MP2021.dir\build.make CMakeFiles/MP2021.dir/lib/Cronista.c.obj
-.PHONY : lib/Cronista.c.obj
-
-lib/Cronista.i: lib/Cronista.c.i
-
-.PHONY : lib/Cronista.i
-
-# target to preprocess a source file
-lib/Cronista.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MP2021.dir\build.make CMakeFiles/MP2021.dir/lib/Cronista.c.i
-.PHONY : lib/Cronista.c.i
-
-lib/Cronista.s: lib/Cronista.c.s
-
-.PHONY : lib/Cronista.s
-
-# target to generate assembly for a file
-lib/Cronista.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MP2021.dir\build.make CMakeFiles/MP2021.dir/lib/Cronista.c.s
-.PHONY : lib/Cronista.c.s
-
-lib/core.obj: lib/core.c.obj
-
-.PHONY : lib/core.obj
-
-# target to build an object file
-lib/core.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MP2021.dir\build.make CMakeFiles/MP2021.dir/lib/core.c.obj
-.PHONY : lib/core.c.obj
-
-lib/core.i: lib/core.c.i
-
-.PHONY : lib/core.i
-
-# target to preprocess a source file
-lib/core.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MP2021.dir\build.make CMakeFiles/MP2021.dir/lib/core.c.i
-.PHONY : lib/core.c.i
-
-lib/core.s: lib/core.c.s
-
-.PHONY : lib/core.s
-
-# target to generate assembly for a file
-lib/core.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MP2021.dir\build.make CMakeFiles/MP2021.dir/lib/core.c.s
-.PHONY : lib/core.c.s
-
 main.obj: main.c.obj
 
 .PHONY : main.obj
@@ -232,12 +178,6 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... MP2021
-	@echo ... lib/Cronista.obj
-	@echo ... lib/Cronista.i
-	@echo ... lib/Cronista.s
-	@echo ... lib/core.obj
-	@echo ... lib/core.i
-	@echo ... lib/core.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
