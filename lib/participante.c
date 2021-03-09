@@ -1,6 +1,4 @@
-//
-// Created by juank on 02/03/2021.
-//
+
 #include "participante.h"
 #include "core.h"
 #include <stdio.h>
