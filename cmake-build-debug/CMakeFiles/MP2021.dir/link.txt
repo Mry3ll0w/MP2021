@@ -1,3 +1,3 @@
-"C:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\MP2021.dir/objects.a
+"D:\CLion\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\MP2021.dir/objects.a
 C:\MinGW\bin\ar.exe cr CMakeFiles\MP2021.dir/objects.a @CMakeFiles\MP2021.dir\objects1.rsp
 C:\MinGW\bin\gcc.exe -g   -Wl,--whole-archive CMakeFiles\MP2021.dir/objects.a -Wl,--no-whole-archive  -o MP2021.exe -Wl,--out-implib,libMP2021.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\MP2021.dir\linklibs.rsp
