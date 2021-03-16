@@ -27,6 +27,7 @@ typedef struct {
 typedef struct {
     char id[3];
     char nombre[21];
+    unsigned assigned_players;
 }team;
 
 typedef struct{
@@ -43,7 +44,7 @@ typedef struct{
     char nombre[21];
     char name_tag[6];
     char password[9];
-    char role[20];//P articipante, C ronista, A dmim
+    char role[2];//P articipante, C ronista, A dmim
 
 }user;
 
@@ -68,6 +69,7 @@ FILE *USERFILE;
 FILE *PLANTERFILE;
 FILE *TEAMFILE;
 FILE *PLANTERPLAYERFILE;
+//STRUCTS
 football_player *jugadores;
 config_log configuration;
 user *usuarios;
@@ -310,16 +312,10 @@ void Core_planters_update() {
     assert(configuration.planter_counter!=0 && "Fallo en la lectura de la configuracion inicial");
     PLANTERFILE=fopen("data/Plantilla.txt","w");
     for (int i = 0; i < configuration.planter_counter; ++i) {
-        fprintf(PLANTERFILE,"%s",plantillas[i].id_propietario);
-        fprintf(PLANTERFILE,"%c",'\n');
-        fprintf(PLANTERFILE,"%s",plantillas[i].id);
-        fprintf(PLANTERFILE,"%c",'\n');
-        fprintf(PLANTERFILE,"%s",plantillas[i].nombre);
-        fprintf(PLANTERFILE,"%c",'\n');
-        fprintf(PLANTERFILE,"%d",plantillas[i].presupuesto);
-        fprintf(PLANTERFILE,"%c",'\n');
-        fprintf(PLANTERFILE,"%d",plantillas[i].valoracion_total);
-        fprintf(PLANTERFILE,"%c",'\n');
+        if (strcmp(plantillas[i].id,"xx")!=0){
+
+        }
+
     }
     fclose(PLANTERFILE);
     Core_planters_recovery();
@@ -338,6 +334,7 @@ void Core_teams_recovery() {
     for (int i = 0; i < configuration.team_counter; i++) {
         fscanf(TEAMFILE,"%s",equipos[i].id);
         fscanf(TEAMFILE,"%s",equipos[i].nombre);
+        fscanf(TEAMFILE,"%d",&equipos[i].assigned_players);
         /*
         printf("%s\n",equipos[i].id);
         printf("%s\n",equipos[i].nombre);
@@ -355,6 +352,8 @@ void Core_teams_update() {
         fprintf(TEAMFILE,"%s",equipos[i].id);
         fprintf(TEAMFILE,"%c",'\n');
         fprintf(TEAMFILE,"%s",equipos[i].nombre);
+        fprintf(TEAMFILE,"%c",'\n');
+        fprintf(TEAMFILE,"%d",equipos[i].assigned_players);
         fprintf(TEAMFILE,"%c",'\n');
     }
     fclose(TEAMFILE);
@@ -472,9 +471,10 @@ void Core_planters_player_recovery() {
     for(int i = 0; i < configuration.planter_counter;i++){
         fscanf(PLANTERPLAYERFILE,"%s",jug_plantilla[i].id_player);
         fscanf(PLANTERPLAYERFILE,"%s",jug_plantilla[i].id_planter);
-
+        /*
         printf("%s\n",jug_plantilla[i].id_player);
         printf("%s\n",jug_plantilla[i].id_planter);
+        */
     }
 }
 

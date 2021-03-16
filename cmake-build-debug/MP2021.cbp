@@ -79,6 +79,7 @@
 		<Unit filename="C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/lib/core.h">
 			<Option target="MP2021"/>
 		</Unit>
+<<<<<<< HEAD
 		<Unit filename="C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/lib/cronista.h">
 			<Option target="MP2021"/>
 		</Unit>
@@ -86,6 +87,15 @@
 			<Option target="MP2021"/>
 		</Unit>
 		<Unit filename="C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/lib/users.h">
+=======
+		<Unit filename="D:/Proyectos/MP2021/lib/admin.h">
+			<Option target="MP2021"/>
+		</Unit>
+		<Unit filename="D:/Proyectos/MP2021/lib/core.h">
+			<Option target="MP2021"/>
+		</Unit>
+		<Unit filename="D:/Proyectos/MP2021/lib/participante.h">
+>>>>>>> main
 			<Option target="MP2021"/>
 		</Unit>
 		<Unit filename="C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/main.c">

@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "lib/core.h"
+//#include "lib/Cronista.h"
 
 int main() {
     //system("music.bat");
@@ -18,8 +19,7 @@ int main() {
 
         printf("Deseas hacer alguna operacion mas?\n1)Si\t 2)No\n");
             scanf("%d",&exit_token);
-
-
+        system("cls");
     }
 
     
