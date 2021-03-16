@@ -32,7 +32,8 @@ void adm_list_teams(){
     }
 }
 unsigned adm_menu(unsigned logged_user){
-    int selection;int team_selector,sel;
+    int selection;int team_selector,user_selection,sel;
+    char parser_id[3];
     printf("BIENVENIDO ADMINISTRADOR %s\n\n",usuarios[logged_user].nombre);
     printf("1)Equipos\n2)Usuarios\n3)Configuracion\n");
         scanf("%i",&selection);
@@ -92,7 +93,51 @@ unsigned adm_menu(unsigned logged_user){
             }
             break;
         case 2://USUARIOS
+            printf("1)Listar Usuarios\n2)Modificar Usuario\n3)Add Usuario\n");
+                scanf("%d",&user_selection);
+            switch (user_selection) {
+                case 1:
+                    for (int i = 0; i <configuration.user_counter ; ++i) {
+                        printf("ID=>%s\tNombre=>%s\n",usuarios[i].id,usuarios[i].nombre);
+                        printf("NameTag=>%s\tRole=>%s\n",usuarios[i].name_tag,usuarios[i].role);
+                    }
+                    break;
+                case 2:
 
+                    printf("Introduce el ID del usuario a modificar: \n");
+                        scanf("%s",parser_id);
+                    for (int i = 0; i <configuration.user_counter ; ++i) {
+                        if (strcmp(usuarios[i].id,parser_id)==0){
+                            printf("Selecciona que quieres cambiar:\n");
+                            printf("1)Id\t2)Nombre\n3)NameTag\t4)Role");
+                                scanf("%d",&sel);
+                            switch (sel) {
+                                case 1:
+                                    printf("Introduce el Id\n");
+                                        scanf("%s",usuarios[i].id);
+                                    break;
+                                case 2:
+                                    printf("Introduce el Nombre");
+                                        scanf("%s",usuarios[i].nombre);
+                                    break;
+                                case 3:
+                                    printf("Introduce el nameTag\n");
+                                        scanf("%s",usuarios[i].name_tag);
+                                    break;
+                                case 4:
+                                    printf("Introduce el role (a,p,c)");
+                                        scanf("%s",usuarios[i].role);
+                                    break;
+                            }
+                            Core_teams_update();
+                        }
+                    }
+                    break;
+                case 3:
+                    Core_User_Register();
+                    break;
+            }
+                
             break;
 
         case 3://Edit configuracion

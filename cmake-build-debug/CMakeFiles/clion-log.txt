@@ -1,15 +1,11 @@
-<<<<<<< HEAD
-"C:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" "C:\Users\Marcos\Desktop\Proyecto GitKraken MP 2021\MP2021"
--- The C compiler identification is GNU 6.3.0
+"C:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" D:\Proyectos\MP2021
+-- The C compiler identification is GNU 9.2.0
 -- Check for working C compiler: C:/MinGW/bin/gcc.exe
 -- Check for working C compiler: C:/MinGW/bin/gcc.exe - works
 -- Detecting C compiler ABI info
 -- Detecting C compiler ABI info - done
 -- Detecting C compile features
 -- Detecting C compile features - done
-=======
-"D:\CLion\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" "D:\MP Trabajo\MP2021"
->>>>>>> main
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/cmake-build-debug
+-- Build files have been written to: D:/Proyectos/MP2021/cmake-build-debug

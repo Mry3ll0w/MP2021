@@ -142,6 +142,33 @@ MP2021/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MP2021.dir\build.make CMakeFiles/MP2021.dir/build
 .PHONY : MP2021/fast
 
+lib/Cronista.obj: lib/Cronista.c.obj
+
+.PHONY : lib/Cronista.obj
+
+# target to build an object file
+lib/Cronista.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MP2021.dir\build.make CMakeFiles/MP2021.dir/lib/Cronista.c.obj
+.PHONY : lib/Cronista.c.obj
+
+lib/Cronista.i: lib/Cronista.c.i
+
+.PHONY : lib/Cronista.i
+
+# target to preprocess a source file
+lib/Cronista.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MP2021.dir\build.make CMakeFiles/MP2021.dir/lib/Cronista.c.i
+.PHONY : lib/Cronista.c.i
+
+lib/Cronista.s: lib/Cronista.c.s
+
+.PHONY : lib/Cronista.s
+
+# target to generate assembly for a file
+lib/Cronista.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MP2021.dir\build.make CMakeFiles/MP2021.dir/lib/Cronista.c.s
+.PHONY : lib/Cronista.c.s
+
 main.obj: main.c.obj
 
 .PHONY : main.obj
@@ -178,6 +205,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... MP2021
+	@echo ... lib/Cronista.obj
+	@echo ... lib/Cronista.i
+	@echo ... lib/Cronista.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
