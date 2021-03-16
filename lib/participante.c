@@ -42,18 +42,17 @@ void part_crear_plantilla(){
     char nombre_plant[32], id_plant[5];
     planter new_plant;
     configuration.planter_counter++;
-    //Falta comprarar identificadores
-    planter.id_propietario = "24";
-    //Identificador de ejemplo
+    strcpy(new_plant.id_propietario, usuarios.id);
+
     printf("\nIntroduzca identificador de plantilla:\n");
         gets(id_plant);
-        id_plant = new_plant.id;
+        strcpy(id_plant, new_plant.id);
     printf("\nIntroduzca su nombre:\n");
         gets(nombre_plant);
-        nombre_plant = new_plant.nombre;
+        strcpy(new_plant.nombre,nombre_plant);
     printf("\nIntroduzca el presupuesto para esta plantilla:\n");
         scanf("%i", &presupuesto);
-        presupuesto = new_plant.presupuesto;
+        new_plant.presupuesto = presupuesto;
         //Falta meter jugadores
     Core_planters_update();
     part_menu();
@@ -136,9 +135,9 @@ void part_config_list_jugadores(char id[]){
 
 void part_config_list_disponibles(){
     for(int i = 0; i < configuration.football_player_counter; ++i) {
-        if(jugadores[i].id_team == ""){
+        if(strcmp(jugadores[i].id_team,"")==0){
             printf("\nNombre: %s\n", jugadores[i].nombre);
-            printf("\nValoracion: %s\n", jugadores[i].valoracion);
+            printf("\nValoracion: %i\n", jugadores[i].valoracion);
             printf("\nPrecio: %i\n", jugadores[i].precio);
         }
     }
@@ -191,29 +190,32 @@ void part_config_delete_jugador(char id[]){
 //////////////////////////////////////////////////////////
 
 void part_list_plantilla(){
-    int i;
+    int i, counter = 0;
     printf("\tListado de todas sus plantillas:\n");
 
     for (i=0; i<configuration.planter_counter ; ++i) {
         if(strcmp(usuarios.id, plantillas[i].id_propietario)==0) {
+            counter++;
             printf("%s\n", plantillas[i].id);
             printf("%s\n", plantillas[i].nombre);
             printf("%d\n", plantillas[i].valoracion_total);
         }
-        else{
-            printf("Usted no posee ninguna plantilla");
-            part_menu();
-        }
+    }
+    if(counter==0){
+        printf("Usted no posee ninguna plantilla");
+        part_menu();
     }
 }
 
 void part_eliminar_plantilla(){
-    int i;
+    int i, counter = 0;
     char idem[5];
+
     printf("Introduzca identificador de plantilla que desea eliminar:\n");
     gets(idem);
     for (i=0; i<configuration.planter_counter ; ++i) {
-        if(strcmp(idem, plantillas[i].id)==0){
+        if(strcmp(idem, plantillas[i].id)==0 && strcmp(usuarios[i].id, plantillas[i].id_propietario)==0){
+            counter++;
             plantillas[i].id_propietario = "";
             plantillas[i].id = "";
             plantillas[i].nombre = "";
@@ -221,6 +223,7 @@ void part_eliminar_plantilla(){
             plantillas[i].valoracion_total = 0;
         }
     }
+    if(counter == 0) printf("\nEsa plantilla no existe o no es propietaria de ella\n");
     Core_planters_update();
 }
 
@@ -232,20 +235,23 @@ void part_ranking(){
     }
     for (i = 0; i < configuration.planter_counter; i++) {
         for (j = 0; j < configuration.planter_counter; j++) {
-            if ((plantillas[j].valoracion_total > max) && (ranking[j] == 0)) {
-                max = plantillas[i].valoracion_total;
-                ranking[j] = j + 1;
+            if ((plantillas[j].valoracion_total > max)) {
+                max = plantillas[j].valoracion_total;
+                ranking[i] = max;
             }
         }
-        max = -1;
     }
-    for(i = 0; i < 3; i++) { //Imprimir solo los 3 primeros
-        printf("\nPosicion %i:\n", i+1);
-        printf("%s\n",plantillas[i].id_propietario);
-        printf("%s\n",plantillas[i].id);
-        printf("%s\n",plantillas[i].nombre);
-        printf("%d\n",plantillas[i].presupuesto);
-        printf("%d\n",plantillas[i].valoracion_total);
+    for(i = 3; i < configuration.planter_counter; i++) { //Imprimir solo los 3 primeros
+        for (j = 0; j < configuration.planter_counter; j++) {
+            if (plantillas[j].valoracion_total == ranking[i]) {
+                printf("\nPosicion %i:\n", i + 1);
+                printf("%s\n", plantillas[i].id_propietario);
+                printf("%s\n", plantillas[i].id);
+                printf("%s\n", plantillas[i].nombre);
+                printf("%d\n", plantillas[i].presupuesto);
+                printf("%d\n", plantillas[i].valoracion_total);
+            }
+        }
     }
 }
 
