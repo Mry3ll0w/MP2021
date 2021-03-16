@@ -6,7 +6,11 @@
 
 #IncludeRegexTransform: 
 
+<<<<<<< HEAD
 C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/lib/core.h
+=======
+D:/MP Trabajo/MP2021/lib/core.h
+>>>>>>> main
 string.h
 -
 assert.h
@@ -16,6 +20,7 @@ stdio.h
 stdlib.h
 -
 
+<<<<<<< HEAD
 C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/lib/cronista.c
 stdio.h
 -
@@ -49,4 +54,11 @@ lib/core.h
 C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/lib/core.h
 lib/cronista.h
 C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/lib/cronista.h
+=======
+D:/MP Trabajo/MP2021/main.c
+stdio.h
+-
+lib/core.h
+D:/MP Trabajo/MP2021/lib/core.h
+>>>>>>> main
 

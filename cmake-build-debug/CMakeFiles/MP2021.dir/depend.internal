@@ -6,6 +6,11 @@ CMakeFiles/MP2021.dir/lib/cronista.c.obj
  C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/lib/cronista.c
  C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/lib/cronista.h
 CMakeFiles/MP2021.dir/main.c.obj
+<<<<<<< HEAD
  C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/lib/core.h
  C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/lib/cronista.h
  C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/main.c
+=======
+ D:/MP Trabajo/MP2021/lib/core.h
+ D:/MP Trabajo/MP2021/main.c
+>>>>>>> main
