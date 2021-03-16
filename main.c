@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include "lib/core.h"
-//#include "lib/Cronista.h"
+#include "lib/cronista.h"
+
+
 
 int main() {
     //system("music.bat");
@@ -27,3 +29,4 @@ int main() {
 
     return 0;
 }
+

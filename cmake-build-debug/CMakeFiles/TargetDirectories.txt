@@ -1,9 +1,3 @@
-<<<<<<< HEAD
 C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/cmake-build-debug/CMakeFiles/MP2021.dir
 C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/cmake-build-debug/CMakeFiles/edit_cache.dir
 C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-=======
-D:/MP Trabajo/MP2021/cmake-build-debug/CMakeFiles/MP2021.dir
-D:/MP Trabajo/MP2021/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/MP Trabajo/MP2021/cmake-build-debug/CMakeFiles/rebuild_cache.dir
->>>>>>> main

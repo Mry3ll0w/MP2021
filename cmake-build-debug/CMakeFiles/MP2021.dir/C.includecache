@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-D:/Proyectos/MP2021/lib/core.h
+C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/lib/core.h
 string.h
 -
 assert.h
@@ -16,9 +16,37 @@ stdio.h
 stdlib.h
 -
 
-D:/Proyectos/MP2021/main.c
+C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/lib/cronista.c
+stdio.h
+-
+math.h
+-
+stdlib.h
+-
+string.h
+-
+cronista.h
+C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/lib/cronista.h
+core.h
+C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/lib/core.h
+
+C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/lib/cronista.h
+stdio.h
+-
+math.h
+-
+stdlib.h
+-
+string.h
+-
+core.h
+C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/lib/core.h
+
+C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/main.c
 stdio.h
 -
 lib/core.h
-D:/Proyectos/MP2021/lib/core.h
+C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/lib/core.h
+lib/cronista.h
+C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/lib/cronista.h
 
