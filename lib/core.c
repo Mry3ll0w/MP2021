@@ -335,7 +335,7 @@ unsigned Core_login() {
     int found_user=-1;
     printf("Hola , bienvenido al sistema de acceso\n");
     ppio:
-    printf("Introduce Usuario: ");
+    printf("Introduce ID de Usuario: ");
     scanf("%s",id);
     for (int i = 0; i < configuration.user_counter; i++){
         if(strcmp(usuarios[i].id,id)==0)
@@ -385,4 +385,23 @@ void Core_planters_player_update() {
     }
     fclose(PLANTERPLAYERFILE);
 }
-//ok
+
+void Core_Users_update(){
+    //Escritura en el fichero
+    USERFILE = fopen("data/Usuarios.txt","w");
+    assert(USERFILE!=NULL);
+    for (int i = 0; i <configuration.user_counter ; ++i) {
+        fprintf(USERFILE,"%s",usuarios[i].id);
+        fprintf(USERFILE,"%c",'\n');
+        fprintf(USERFILE,"%s",usuarios[i].nombre);
+        fprintf(USERFILE,"%c",'\n');
+        fprintf(USERFILE,"%s",usuarios[i].name_tag);
+        fprintf(USERFILE,"%c",'\n');
+        fprintf(USERFILE,"%s",usuarios[i].password);
+        fprintf(USERFILE,"%c",'\n');
+        fprintf(USERFILE,"%s",usuarios[i].role);
+        fprintf(USERFILE,"%c",'\n');
+    }
+    fclose(USERFILE);
+    Core_Users_recovery();
+}

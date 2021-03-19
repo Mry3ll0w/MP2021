@@ -83,6 +83,7 @@ void Core_data_update();//Su uso conlleva un update general de los ficheros
 void Core_football_players_recovery();
 void Core_football_players_update();
 void Core_Users_recovery();
+void Core_Users_update();
 void Core_planters_recovery();
 void Core_planters_update();
 void Core_teams_recovery();

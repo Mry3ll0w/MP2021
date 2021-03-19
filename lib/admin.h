@@ -35,6 +35,7 @@ unsigned adm_menu(unsigned logged_user){
     int selection;int team_selector,user_selection,sel;
     char parser_id[3];
     printf("BIENVENIDO ADMINISTRADOR %s\n\n",usuarios[logged_user].nombre);
+    t_menu:
     printf("1)Equipos\n2)Usuarios\n3)Configuracion\n");
         scanf("%i",&selection);
     switch (selection) {
@@ -42,7 +43,7 @@ unsigned adm_menu(unsigned logged_user){
             //system("cls");//Borrramos la pantalla de la linea de comandos
             printf("\t\tBienvenido al menu de equipos\n");
             printf("Seleccione la opcion deseada:\n");
-        t_menu:
+
             printf("1)Listar equipos\n2)Modificar Equipo\n3)Add Equipo\n");
                 scanf("%d",&team_selector);
             if (team_selector==1){
@@ -66,6 +67,7 @@ unsigned adm_menu(unsigned logged_user){
                         else if (t_option==2){
                             printf("Introduce el nuevo nombre(separando espacios con_)");
                                 scanf("%s",equipos[i].nombre);
+                                Core_teams_update();
                                 goto fin_team;
                         }
                         else{
@@ -129,7 +131,7 @@ unsigned adm_menu(unsigned logged_user){
                                         scanf("%s",usuarios[i].role);
                                     break;
                             }
-                            Core_teams_update();
+                            Core_Users_update();
                         }
                     }
                     break;
