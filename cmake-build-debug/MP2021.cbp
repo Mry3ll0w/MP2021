@@ -83,6 +83,9 @@
 		<Unit filename="D:/Proyectos/MP2021/lib/admin.h">
 			<Option target="MP2021"/>
 		</Unit>
+		<Unit filename="D:/Proyectos/MP2021/lib/core.c">
+			<Option target="MP2021"/>
+		</Unit>
 		<Unit filename="D:/Proyectos/MP2021/lib/core.h">
 			<Option target="MP2021"/>
 		</Unit>
