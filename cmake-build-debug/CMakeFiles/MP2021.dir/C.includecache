@@ -6,27 +6,7 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/lib/admin.h
-core.h
-C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/lib/core.h
-assert.h
--
-
-C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/lib/core.c
-core.h
-C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/lib/core.h
-
-C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/lib/core.h
-string.h
--
-assert.h
--
-stdio.h
--
-stdlib.h
--
-
-C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/lib/cronista.c
+D:/Proyectos/MP2021/lib/Cronista.c
 stdio.h
 -
 math.h
@@ -36,11 +16,11 @@ stdlib.h
 string.h
 -
 cronista.h
-C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/lib/cronista.h
+D:/Proyectos/MP2021/lib/Cronista.h
 core.h
-C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/lib/core.h
+D:/Proyectos/MP2021/lib/core.h
 
-C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/lib/cronista.h
+D:/Proyectos/MP2021/lib/Cronista.h
 stdio.h
 -
 math.h
@@ -50,15 +30,51 @@ stdlib.h
 string.h
 -
 core.h
-C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/lib/core.h
+D:/Proyectos/MP2021/lib/core.h
 
-C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/main.c
+D:/Proyectos/MP2021/lib/admin.h
+core.h
+D:/Proyectos/MP2021/lib/core.h
+assert.h
+-
+
+D:/Proyectos/MP2021/lib/core.c
+core.h
+D:/Proyectos/MP2021/lib/core.h
+
+D:/Proyectos/MP2021/lib/core.h
+string.h
+-
+assert.h
+-
+stdio.h
+-
+stdlib.h
+-
+
+D:/Proyectos/MP2021/lib/participante.c
+participante.h
+D:/Proyectos/MP2021/lib/participante.h
+core.h
+D:/Proyectos/MP2021/lib/core.h
+stdio.h
+-
+string.h
+-
+
+D:/Proyectos/MP2021/lib/participante.h
+
+D:/Proyectos/MP2021/main.c
 stdio.h
 -
 string.h
 -
 lib/core.h
-C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/lib/core.h
+D:/Proyectos/MP2021/lib/core.h
 lib/admin.h
-C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/lib/admin.h
+D:/Proyectos/MP2021/lib/admin.h
+lib/Cronista.h
+D:/Proyectos/MP2021/lib/Cronista.h
+lib/participante.h
+D:/Proyectos/MP2021/lib/participante.h
 

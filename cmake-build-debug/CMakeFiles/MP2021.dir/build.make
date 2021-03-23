@@ -53,26 +53,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "D:\CLion\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "D:\CLion\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E rm -f
+RM = "C:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-<<<<<<< HEAD
-CMAKE_SOURCE_DIR = "C:\Users\Marcos\Desktop\Proyecto GitKraken MP 2021\MP2021"
+CMAKE_SOURCE_DIR = D:\Proyectos\MP2021
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\Marcos\Desktop\Proyecto GitKraken MP 2021\MP2021\cmake-build-debug"
-=======
-CMAKE_SOURCE_DIR = "D:\MP Trabajo\MP2021"
-
-# The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "D:\MP Trabajo\MP2021\cmake-build-debug"
->>>>>>> main
+CMAKE_BINARY_DIR = D:\Proyectos\MP2021\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/MP2021.dir/depend.make
@@ -85,123 +78,75 @@ include CMakeFiles/MP2021.dir/flags.make
 
 CMakeFiles/MP2021.dir/main.c.obj: CMakeFiles/MP2021.dir/flags.make
 CMakeFiles/MP2021.dir/main.c.obj: ../main.c
-<<<<<<< HEAD
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Marcos\Desktop\Proyecto GitKraken MP 2021\MP2021\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/MP2021.dir/main.c.obj"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MP2021.dir\main.c.obj   -c "C:\Users\Marcos\Desktop\Proyecto GitKraken MP 2021\MP2021\main.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Proyectos\MP2021\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/MP2021.dir/main.c.obj"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MP2021.dir\main.c.obj   -c D:\Proyectos\MP2021\main.c
 
 CMakeFiles/MP2021.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MP2021.dir/main.c.i"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\Marcos\Desktop\Proyecto GitKraken MP 2021\MP2021\main.c" > CMakeFiles\MP2021.dir\main.c.i
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\Proyectos\MP2021\main.c > CMakeFiles\MP2021.dir\main.c.i
 
 CMakeFiles/MP2021.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MP2021.dir/main.c.s"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\Marcos\Desktop\Proyecto GitKraken MP 2021\MP2021\main.c" -o CMakeFiles\MP2021.dir\main.c.s
-
-CMakeFiles/MP2021.dir/lib/cronista.c.obj: CMakeFiles/MP2021.dir/flags.make
-CMakeFiles/MP2021.dir/lib/cronista.c.obj: ../lib/cronista.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Marcos\Desktop\Proyecto GitKraken MP 2021\MP2021\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/MP2021.dir/lib/cronista.c.obj"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MP2021.dir\lib\cronista.c.obj   -c "C:\Users\Marcos\Desktop\Proyecto GitKraken MP 2021\MP2021\lib\cronista.c"
-
-CMakeFiles/MP2021.dir/lib/cronista.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MP2021.dir/lib/cronista.c.i"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\Marcos\Desktop\Proyecto GitKraken MP 2021\MP2021\lib\cronista.c" > CMakeFiles\MP2021.dir\lib\cronista.c.i
-
-CMakeFiles/MP2021.dir/lib/cronista.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MP2021.dir/lib/cronista.c.s"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\Marcos\Desktop\Proyecto GitKraken MP 2021\MP2021\lib\cronista.c" -o CMakeFiles\MP2021.dir\lib\cronista.c.s
-
-CMakeFiles/MP2021.dir/lib/core.c.obj: CMakeFiles/MP2021.dir/flags.make
-CMakeFiles/MP2021.dir/lib/core.c.obj: ../lib/core.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Marcos\Desktop\Proyecto GitKraken MP 2021\MP2021\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/MP2021.dir/lib/core.c.obj"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MP2021.dir\lib\core.c.obj   -c "C:\Users\Marcos\Desktop\Proyecto GitKraken MP 2021\MP2021\lib\core.c"
-
-CMakeFiles/MP2021.dir/lib/core.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MP2021.dir/lib/core.c.i"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\Marcos\Desktop\Proyecto GitKraken MP 2021\MP2021\lib\core.c" > CMakeFiles\MP2021.dir\lib\core.c.i
-
-CMakeFiles/MP2021.dir/lib/core.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MP2021.dir/lib/core.c.s"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\Marcos\Desktop\Proyecto GitKraken MP 2021\MP2021\lib\core.c" -o CMakeFiles\MP2021.dir\lib\core.c.s
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\MP Trabajo\MP2021\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/MP2021.dir/main.c.obj"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MP2021.dir\main.c.obj   -c "D:\MP Trabajo\MP2021\main.c"
-
-CMakeFiles/MP2021.dir/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MP2021.dir/main.c.i"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "D:\MP Trabajo\MP2021\main.c" > CMakeFiles\MP2021.dir\main.c.i
-
-CMakeFiles/MP2021.dir/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MP2021.dir/main.c.s"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\MP Trabajo\MP2021\main.c" -o CMakeFiles\MP2021.dir\main.c.s
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\Proyectos\MP2021\main.c -o CMakeFiles\MP2021.dir\main.c.s
 
 CMakeFiles/MP2021.dir/lib/Cronista.c.obj: CMakeFiles/MP2021.dir/flags.make
 CMakeFiles/MP2021.dir/lib/Cronista.c.obj: ../lib/Cronista.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\MP Trabajo\MP2021\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/MP2021.dir/lib/Cronista.c.obj"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MP2021.dir\lib\Cronista.c.obj   -c "D:\MP Trabajo\MP2021\lib\Cronista.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Proyectos\MP2021\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/MP2021.dir/lib/Cronista.c.obj"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MP2021.dir\lib\Cronista.c.obj   -c D:\Proyectos\MP2021\lib\Cronista.c
 
 CMakeFiles/MP2021.dir/lib/Cronista.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MP2021.dir/lib/Cronista.c.i"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "D:\MP Trabajo\MP2021\lib\Cronista.c" > CMakeFiles\MP2021.dir\lib\Cronista.c.i
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\Proyectos\MP2021\lib\Cronista.c > CMakeFiles\MP2021.dir\lib\Cronista.c.i
 
 CMakeFiles/MP2021.dir/lib/Cronista.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MP2021.dir/lib/Cronista.c.s"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\MP Trabajo\MP2021\lib\Cronista.c" -o CMakeFiles\MP2021.dir\lib\Cronista.c.s
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\Proyectos\MP2021\lib\Cronista.c -o CMakeFiles\MP2021.dir\lib\Cronista.c.s
 
 CMakeFiles/MP2021.dir/lib/core.c.obj: CMakeFiles/MP2021.dir/flags.make
 CMakeFiles/MP2021.dir/lib/core.c.obj: ../lib/core.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\MP Trabajo\MP2021\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/MP2021.dir/lib/core.c.obj"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MP2021.dir\lib\core.c.obj   -c "D:\MP Trabajo\MP2021\lib\core.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Proyectos\MP2021\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/MP2021.dir/lib/core.c.obj"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MP2021.dir\lib\core.c.obj   -c D:\Proyectos\MP2021\lib\core.c
 
 CMakeFiles/MP2021.dir/lib/core.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MP2021.dir/lib/core.c.i"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "D:\MP Trabajo\MP2021\lib\core.c" > CMakeFiles\MP2021.dir\lib\core.c.i
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\Proyectos\MP2021\lib\core.c > CMakeFiles\MP2021.dir\lib\core.c.i
 
 CMakeFiles/MP2021.dir/lib/core.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MP2021.dir/lib/core.c.s"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\MP Trabajo\MP2021\lib\core.c" -o CMakeFiles\MP2021.dir\lib\core.c.s
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\Proyectos\MP2021\lib\core.c -o CMakeFiles\MP2021.dir\lib\core.c.s
 
 CMakeFiles/MP2021.dir/lib/participante.c.obj: CMakeFiles/MP2021.dir/flags.make
 CMakeFiles/MP2021.dir/lib/participante.c.obj: ../lib/participante.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\MP Trabajo\MP2021\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/MP2021.dir/lib/participante.c.obj"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MP2021.dir\lib\participante.c.obj   -c "D:\MP Trabajo\MP2021\lib\participante.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Proyectos\MP2021\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/MP2021.dir/lib/participante.c.obj"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MP2021.dir\lib\participante.c.obj   -c D:\Proyectos\MP2021\lib\participante.c
 
 CMakeFiles/MP2021.dir/lib/participante.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MP2021.dir/lib/participante.c.i"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "D:\MP Trabajo\MP2021\lib\participante.c" > CMakeFiles\MP2021.dir\lib\participante.c.i
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\Proyectos\MP2021\lib\participante.c > CMakeFiles\MP2021.dir\lib\participante.c.i
 
 CMakeFiles/MP2021.dir/lib/participante.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MP2021.dir/lib/participante.c.s"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\MP Trabajo\MP2021\lib\participante.c" -o CMakeFiles\MP2021.dir\lib\participante.c.s
->>>>>>> main
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\Proyectos\MP2021\lib\participante.c -o CMakeFiles\MP2021.dir\lib\participante.c.s
 
 # Object files for target MP2021
 MP2021_OBJECTS = \
 "CMakeFiles/MP2021.dir/main.c.obj" \
-<<<<<<< HEAD
-"CMakeFiles/MP2021.dir/lib/cronista.c.obj" \
-"CMakeFiles/MP2021.dir/lib/core.c.obj"
-=======
 "CMakeFiles/MP2021.dir/lib/Cronista.c.obj" \
 "CMakeFiles/MP2021.dir/lib/core.c.obj" \
 "CMakeFiles/MP2021.dir/lib/participante.c.obj"
->>>>>>> main
 
 # External object files for target MP2021
 MP2021_EXTERNAL_OBJECTS =
 
 MP2021.exe: CMakeFiles/MP2021.dir/main.c.obj
-MP2021.exe: CMakeFiles/MP2021.dir/lib/cronista.c.obj
+MP2021.exe: CMakeFiles/MP2021.dir/lib/Cronista.c.obj
 MP2021.exe: CMakeFiles/MP2021.dir/lib/core.c.obj
 MP2021.exe: CMakeFiles/MP2021.dir/lib/participante.c.obj
 MP2021.exe: CMakeFiles/MP2021.dir/build.make
 MP2021.exe: CMakeFiles/MP2021.dir/linklibs.rsp
 MP2021.exe: CMakeFiles/MP2021.dir/objects1.rsp
 MP2021.exe: CMakeFiles/MP2021.dir/link.txt
-<<<<<<< HEAD
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\Marcos\Desktop\Proyecto GitKraken MP 2021\MP2021\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable MP2021.exe"
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="D:\MP Trabajo\MP2021\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable MP2021.exe"
->>>>>>> main
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\Proyectos\MP2021\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable MP2021.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\MP2021.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -214,10 +159,6 @@ CMakeFiles/MP2021.dir/clean:
 .PHONY : CMakeFiles/MP2021.dir/clean
 
 CMakeFiles/MP2021.dir/depend:
-<<<<<<< HEAD
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "C:\Users\Marcos\Desktop\Proyecto GitKraken MP 2021\MP2021" "C:\Users\Marcos\Desktop\Proyecto GitKraken MP 2021\MP2021" "C:\Users\Marcos\Desktop\Proyecto GitKraken MP 2021\MP2021\cmake-build-debug" "C:\Users\Marcos\Desktop\Proyecto GitKraken MP 2021\MP2021\cmake-build-debug" "C:\Users\Marcos\Desktop\Proyecto GitKraken MP 2021\MP2021\cmake-build-debug\CMakeFiles\MP2021.dir\DependInfo.cmake" --color=$(COLOR)
-=======
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "D:\MP Trabajo\MP2021" "D:\MP Trabajo\MP2021" "D:\MP Trabajo\MP2021\cmake-build-debug" "D:\MP Trabajo\MP2021\cmake-build-debug" "D:\MP Trabajo\MP2021\cmake-build-debug\CMakeFiles\MP2021.dir\DependInfo.cmake" --color=$(COLOR)
->>>>>>> main
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\Proyectos\MP2021 D:\Proyectos\MP2021 D:\Proyectos\MP2021\cmake-build-debug D:\Proyectos\MP2021\cmake-build-debug D:\Proyectos\MP2021\cmake-build-debug\CMakeFiles\MP2021.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/MP2021.dir/depend
 
