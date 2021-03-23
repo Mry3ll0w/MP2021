@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/MP2021.dir/lib/Cronista.c.obj"
   "CMakeFiles/MP2021.dir/lib/core.c.obj"
+  "CMakeFiles/MP2021.dir/lib/cronista.c.obj"
   "CMakeFiles/MP2021.dir/main.c.obj"
   "MP2021.exe"
   "MP2021.exe.manifest"
