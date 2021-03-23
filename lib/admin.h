@@ -40,7 +40,7 @@ unsigned adm_menu(unsigned logged_user){
         scanf("%i",&selection);
     switch (selection) {
         case 1://Menu Equipos
-            //system("cls");//Borrramos la pantalla de la linea de comandos
+
             printf("\t\tBienvenido al menu de equipos\n");
             printf("Seleccione la opcion deseada:\n");
 
