@@ -89,6 +89,9 @@
 		<Unit filename="D:/Proyectos/MP2021/lib/core.h">
 			<Option target="MP2021"/>
 		</Unit>
+		<Unit filename="D:/Proyectos/MP2021/lib/participante.c">
+			<Option target="MP2021"/>
+		</Unit>
 		<Unit filename="D:/Proyectos/MP2021/lib/participante.h">
 			<Option target="MP2021"/>
 		</Unit>

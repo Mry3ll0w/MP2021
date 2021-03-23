@@ -37,12 +37,12 @@ void part_menu(){
     }
 }
 
-void part_crear_plantilla(){
+void part_crear_plantilla(int user_number){
     int presupuesto, puntuacion;
     char nombre_plant[32], id_plant[5];
     planter new_plant;
     configuration.planter_counter++;
-    strcpy(new_plant.id_propietario, usuarios.id);
+    strcpy(new_plant.id_propietario, usuarios[user_number.id);
 
     printf("\nIntroduzca identificador de plantilla:\n");
         gets(id_plant);
