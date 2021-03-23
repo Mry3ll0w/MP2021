@@ -196,33 +196,6 @@ lib/core.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MP2021.dir\build.make CMakeFiles/MP2021.dir/lib/core.c.s
 .PHONY : lib/core.c.s
 
-lib/participante.obj: lib/participante.c.obj
-
-.PHONY : lib/participante.obj
-
-# target to build an object file
-lib/participante.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MP2021.dir\build.make CMakeFiles/MP2021.dir/lib/participante.c.obj
-.PHONY : lib/participante.c.obj
-
-lib/participante.i: lib/participante.c.i
-
-.PHONY : lib/participante.i
-
-# target to preprocess a source file
-lib/participante.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MP2021.dir\build.make CMakeFiles/MP2021.dir/lib/participante.c.i
-.PHONY : lib/participante.c.i
-
-lib/participante.s: lib/participante.c.s
-
-.PHONY : lib/participante.s
-
-# target to generate assembly for a file
-lib/participante.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MP2021.dir\build.make CMakeFiles/MP2021.dir/lib/participante.c.s
-.PHONY : lib/participante.c.s
-
 main.obj: main.c.obj
 
 .PHONY : main.obj
@@ -265,9 +238,6 @@ help:
 	@echo ... lib/core.obj
 	@echo ... lib/core.i
 	@echo ... lib/core.s
-	@echo ... lib/participante.obj
-	@echo ... lib/participante.i
-	@echo ... lib/participante.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
