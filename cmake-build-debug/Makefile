@@ -58,19 +58,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "D:\CLion\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E rm -f
+RM = "D:\CLion\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\Proyectos\MP2021
+CMAKE_SOURCE_DIR = "D:\MP Trabajo\MP2021"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\Proyectos\MP2021\cmake-build-debug
+CMAKE_BINARY_DIR = "D:\MP Trabajo\MP2021\cmake-build-debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -78,7 +78,7 @@ CMAKE_BINARY_DIR = D:\Proyectos\MP2021\cmake-build-debug
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"D:\CLion\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -89,7 +89,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"D:\CLion\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -99,9 +99,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Proyectos\MP2021\cmake-build-debug\CMakeFiles D:\Proyectos\MP2021\cmake-build-debug\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\MP Trabajo\MP2021\cmake-build-debug\CMakeFiles" "D:\MP Trabajo\MP2021\cmake-build-debug\CMakeFiles\progress.marks"
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Proyectos\MP2021\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\MP Trabajo\MP2021\cmake-build-debug\CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -196,6 +196,33 @@ lib/core.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MP2021.dir\build.make CMakeFiles/MP2021.dir/lib/core.c.s
 .PHONY : lib/core.c.s
 
+lib/participante.obj: lib/participante.c.obj
+
+.PHONY : lib/participante.obj
+
+# target to build an object file
+lib/participante.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MP2021.dir\build.make CMakeFiles/MP2021.dir/lib/participante.c.obj
+.PHONY : lib/participante.c.obj
+
+lib/participante.i: lib/participante.c.i
+
+.PHONY : lib/participante.i
+
+# target to preprocess a source file
+lib/participante.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MP2021.dir\build.make CMakeFiles/MP2021.dir/lib/participante.c.i
+.PHONY : lib/participante.c.i
+
+lib/participante.s: lib/participante.c.s
+
+.PHONY : lib/participante.s
+
+# target to generate assembly for a file
+lib/participante.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MP2021.dir\build.make CMakeFiles/MP2021.dir/lib/participante.c.s
+.PHONY : lib/participante.c.s
+
 main.obj: main.c.obj
 
 .PHONY : main.obj
@@ -238,6 +265,9 @@ help:
 	@echo ... lib/core.obj
 	@echo ... lib/core.i
 	@echo ... lib/core.s
+	@echo ... lib/participante.obj
+	@echo ... lib/participante.i
+	@echo ... lib/participante.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

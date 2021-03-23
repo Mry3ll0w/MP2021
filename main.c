@@ -2,7 +2,8 @@
 #include <string.h>
 #include "lib/core.h"
 #include "lib/admin.h"
-//#include "lib/Cronista.h"
+#include "lib/Cronista.h"
+#include "lib/participante.h"
 
 int main() {
     //system("music.bat");
@@ -20,7 +21,7 @@ int main() {
             adm_menu(logged_user);
         }
         if (strcmp(usuarios[logged_user].role,"p")==0){
-            //Menu participante
+            part_menu(logged_user);
         }
         else if (strcmp(usuarios[logged_user].role,"c")==0){
             //Menu cronista
