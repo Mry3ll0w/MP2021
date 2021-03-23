@@ -6,7 +6,7 @@ void part_crear_plantilla(int logged_user);
 void part_config_plantilla(int logged_user);
 void part_list_plantilla(int logged_user);
 void part_eliminar_plantilla(int logged_user);
-void part_ranking();
+void part_ranking(int logged_user);
 void part_exit();
 
 #endif //MP2021_PARTICIPANTE_H

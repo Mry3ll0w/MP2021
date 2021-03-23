@@ -30,7 +30,7 @@ void part_menu(int logged_user){
                 break;
         case 4: part_eliminar_plantilla(logged_user);
                 break;
-        case 5: part_ranking();
+        case 5: part_ranking(logged_user);
                 break;
         case 6: part_exit();
                 break;
@@ -228,7 +228,7 @@ void part_eliminar_plantilla(int logged_user){
     part_menu(logged_user);
 }
 
-void part_ranking(){
+void part_ranking(int logged_user){
     int i, j, max = -1, ranking[configuration.planter_counter];
 
     for (i = 0; i < configuration.planter_counter; i++) {
@@ -254,6 +254,7 @@ void part_ranking(){
             }
         }
     }
+    part_menu(logged_user);
 }
 
 void part_exit(){
