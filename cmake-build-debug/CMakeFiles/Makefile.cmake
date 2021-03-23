@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_GENERATOR "MinGW Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
+<<<<<<< HEAD
   "C:/Program Files/JetBrains/CLion 2020.3.2/bin/cmake/win/share/cmake-3.17/Modules/CMakeCCompiler.cmake.in"
   "C:/Program Files/JetBrains/CLion 2020.3.2/bin/cmake/win/share/cmake-3.17/Modules/CMakeCCompilerABI.c"
   "C:/Program Files/JetBrains/CLion 2020.3.2/bin/cmake/win/share/cmake-3.17/Modules/CMakeCInformation.cmake"
@@ -83,6 +84,30 @@ set(CMAKE_MAKEFILE_DEPENDS
   "C:/Program Files/JetBrains/CLion 2020.3.2/bin/cmake/win/share/cmake-3.17/Modules/Platform/Windows.cmake"
   "C:/Program Files/JetBrains/CLion 2020.3.2/bin/cmake/win/share/cmake-3.17/Modules/Platform/WindowsPaths.cmake"
   "C:/Program Files/JetBrains/CLion 2020.3.2/bin/cmake/win/share/cmake-3.17/Modules/ProcessorCount.cmake"
+=======
+  "D:/CLion/CLion 2020.3.2/bin/cmake/win/share/cmake-3.17/Modules/CMakeCInformation.cmake"
+  "D:/CLion/CLion 2020.3.2/bin/cmake/win/share/cmake-3.17/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake"
+  "D:/CLion/CLion 2020.3.2/bin/cmake/win/share/cmake-3.17/Modules/CMakeCommonLanguageInclude.cmake"
+  "D:/CLion/CLion 2020.3.2/bin/cmake/win/share/cmake-3.17/Modules/CMakeExtraGeneratorDetermineCompilerMacrosAndIncludeDirs.cmake"
+  "D:/CLion/CLion 2020.3.2/bin/cmake/win/share/cmake-3.17/Modules/CMakeFindCodeBlocks.cmake"
+  "D:/CLion/CLion 2020.3.2/bin/cmake/win/share/cmake-3.17/Modules/CMakeGenericSystem.cmake"
+  "D:/CLion/CLion 2020.3.2/bin/cmake/win/share/cmake-3.17/Modules/CMakeInitializeConfigs.cmake"
+  "D:/CLion/CLion 2020.3.2/bin/cmake/win/share/cmake-3.17/Modules/CMakeLanguageInformation.cmake"
+  "D:/CLion/CLion 2020.3.2/bin/cmake/win/share/cmake-3.17/Modules/CMakeRCInformation.cmake"
+  "D:/CLion/CLion 2020.3.2/bin/cmake/win/share/cmake-3.17/Modules/CMakeSystemSpecificInformation.cmake"
+  "D:/CLion/CLion 2020.3.2/bin/cmake/win/share/cmake-3.17/Modules/CMakeSystemSpecificInitialize.cmake"
+  "D:/CLion/CLion 2020.3.2/bin/cmake/win/share/cmake-3.17/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
+  "D:/CLion/CLion 2020.3.2/bin/cmake/win/share/cmake-3.17/Modules/Compiler/GNU-C.cmake"
+  "D:/CLion/CLion 2020.3.2/bin/cmake/win/share/cmake-3.17/Modules/Compiler/GNU.cmake"
+  "D:/CLion/CLion 2020.3.2/bin/cmake/win/share/cmake-3.17/Modules/Internal/CMakeCheckCompilerFlag.cmake"
+  "D:/CLion/CLion 2020.3.2/bin/cmake/win/share/cmake-3.17/Modules/Platform/Windows-GNU-C-ABI.cmake"
+  "D:/CLion/CLion 2020.3.2/bin/cmake/win/share/cmake-3.17/Modules/Platform/Windows-GNU-C.cmake"
+  "D:/CLion/CLion 2020.3.2/bin/cmake/win/share/cmake-3.17/Modules/Platform/Windows-GNU.cmake"
+  "D:/CLion/CLion 2020.3.2/bin/cmake/win/share/cmake-3.17/Modules/Platform/Windows-windres.cmake"
+  "D:/CLion/CLion 2020.3.2/bin/cmake/win/share/cmake-3.17/Modules/Platform/Windows.cmake"
+  "D:/CLion/CLion 2020.3.2/bin/cmake/win/share/cmake-3.17/Modules/Platform/WindowsPaths.cmake"
+  "D:/CLion/CLion 2020.3.2/bin/cmake/win/share/cmake-3.17/Modules/ProcessorCount.cmake"
+>>>>>>> main
   "../CMakeLists.txt"
   "CMakeFiles/3.17.5/CMakeCCompiler.cmake"
   "CMakeFiles/3.17.5/CMakeRCCompiler.cmake"

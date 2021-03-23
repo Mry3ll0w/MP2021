@@ -58,19 +58,26 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "D:\CLion\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E rm -f
+RM = "D:\CLion\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
+<<<<<<< HEAD
 CMAKE_SOURCE_DIR = "C:\Users\Marcos\Desktop\Proyecto GitKraken MP 2021\MP2021"
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = "C:\Users\Marcos\Desktop\Proyecto GitKraken MP 2021\MP2021\cmake-build-debug"
+=======
+CMAKE_SOURCE_DIR = "D:\MP Trabajo\MP2021"
+
+# The top-level build directory on which CMake was run.
+CMAKE_BINARY_DIR = "D:\MP Trabajo\MP2021\cmake-build-debug"
+>>>>>>> main
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -78,7 +85,7 @@ CMAKE_BINARY_DIR = "C:\Users\Marcos\Desktop\Proyecto GitKraken MP 2021\MP2021\cm
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"D:\CLion\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -89,7 +96,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"D:\CLion\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -99,9 +106,15 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
+<<<<<<< HEAD
 	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Marcos\Desktop\Proyecto GitKraken MP 2021\MP2021\cmake-build-debug\CMakeFiles" "C:\Users\Marcos\Desktop\Proyecto GitKraken MP 2021\MP2021\cmake-build-debug\CMakeFiles\progress.marks"
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
 	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Marcos\Desktop\Proyecto GitKraken MP 2021\MP2021\cmake-build-debug\CMakeFiles" 0
+=======
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\MP Trabajo\MP2021\cmake-build-debug\CMakeFiles" "D:\MP Trabajo\MP2021\cmake-build-debug\CMakeFiles\progress.marks"
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\MP Trabajo\MP2021\cmake-build-debug\CMakeFiles" 0
+>>>>>>> main
 .PHONY : all
 
 # The main clean target

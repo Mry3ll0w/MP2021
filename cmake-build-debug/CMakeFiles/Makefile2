@@ -54,19 +54,26 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "D:\CLion\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E rm -f
+RM = "D:\CLion\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
+<<<<<<< HEAD
 CMAKE_SOURCE_DIR = "C:\Users\Marcos\Desktop\Proyecto GitKraken MP 2021\MP2021"
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = "C:\Users\Marcos\Desktop\Proyecto GitKraken MP 2021\MP2021\cmake-build-debug"
+=======
+CMAKE_SOURCE_DIR = "D:\MP Trabajo\MP2021"
+
+# The top-level build directory on which CMake was run.
+CMAKE_BINARY_DIR = "D:\MP Trabajo\MP2021\cmake-build-debug"
+>>>>>>> main
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -93,15 +100,20 @@ clean: CMakeFiles/MP2021.dir/clean
 CMakeFiles/MP2021.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MP2021.dir\build.make CMakeFiles/MP2021.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MP2021.dir\build.make CMakeFiles/MP2021.dir/build
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\Proyectos\MP2021\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5 "Built target MP2021"
 =======
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\Marcos\Desktop\Proyecto GitKraken MP 2021\MP2021\cmake-build-debug\CMakeFiles" --progress-num=1,2,3,4 "Built target MP2021"
 >>>>>>> Stashed changes
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="D:\MP Trabajo\MP2021\cmake-build-debug\CMakeFiles" --progress-num=1,2,3,4,5 "Built target MP2021"
+>>>>>>> main
 .PHONY : CMakeFiles/MP2021.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/MP2021.dir/rule: cmake_check_build_system
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\Proyectos\MP2021\cmake-build-debug\CMakeFiles 5
 =======
@@ -109,6 +121,11 @@ CMakeFiles/MP2021.dir/rule: cmake_check_build_system
 >>>>>>> Stashed changes
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/MP2021.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Marcos\Desktop\Proyecto GitKraken MP 2021\MP2021\cmake-build-debug\CMakeFiles" 0
+=======
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\MP Trabajo\MP2021\cmake-build-debug\CMakeFiles" 5
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/MP2021.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\MP Trabajo\MP2021\cmake-build-debug\CMakeFiles" 0
+>>>>>>> main
 .PHONY : CMakeFiles/MP2021.dir/rule
 
 # Convenience name for target.

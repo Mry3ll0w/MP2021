@@ -7,11 +7,11 @@
 ///////////CABECERAS FUNCIONES CONFIG_PLANTILLA////
 void part_config_list_jugadores(char id[]);
 void part_config_list_disponibles();
-void part_config_add_jugador(char id[]);
-void part_config_delete_jugador(char id[]);
+void part_config_add_jugador(char id[], int logged_user);
+void part_config_delete_jugador(char id[], int logged_user);
 ///////////////////////////////////////////////////
 
-void part_menu(){
+void part_menu(int logged_user){
     int option;
     printf("\tMENU PARTICIPANTE\n");
     printf("\t1.- Crear Plantilla\n");
@@ -22,31 +22,31 @@ void part_menu(){
     printf("\t6.- Salir del programa\n");
     scanf("%i", &option);
     switch(option){
-        case 1: part_crear_plantilla();
+        case 1: part_crear_plantilla(logged_user);
                 break;
-        case 2: part_config_plantilla();
+        case 2: part_config_plantilla(logged_user);
                 break;
-        case 3: part_list_plantilla();
+        case 3: part_list_plantilla(logged_user);
                 break;
-        case 4: part_eliminar_plantilla();
+        case 4: part_eliminar_plantilla(logged_user);
                 break;
-        case 5: part_ranking();
+        case 5: part_ranking(logged_user);
                 break;
         case 6: part_exit();
                 break;
     }
 }
 
-void part_crear_plantilla(int user_number){
+void part_crear_plantilla(int logged_user){
     int presupuesto, puntuacion;
     char nombre_plant[32], id_plant[5];
     planter new_plant;
     configuration.planter_counter++;
-    strcpy(new_plant.id_propietario, usuarios[user_number.id);
+    strcpy(new_plant.id_propietario, usuarios[logged_user].id);
 
     printf("\nIntroduzca identificador de plantilla:\n");
         gets(id_plant);
-        strcpy(id_plant, new_plant.id);
+        strcpy(new_plant.id, id_plant);
     printf("\nIntroduzca su nombre:\n");
         gets(nombre_plant);
         strcpy(new_plant.nombre,nombre_plant);
@@ -55,14 +55,14 @@ void part_crear_plantilla(int user_number){
         new_plant.presupuesto = presupuesto;
         //Falta meter jugadores
     Core_planters_update();
-    part_menu();
+    part_menu(logged_user);
 }
 
-void part_config_plantilla() {
+void part_config_plantilla(int logged_user) {
     char idem_plantilla[5];
     int i, j, counter = 0, counter2 = 0, option, option2;
     for (j = 0; j < configuration.planter_counter; j++) {
-        if (strcmp(usuarios.id,plantillas[j].id)==0) {
+        if (strcmp(usuarios[logged_user].id,plantillas[j].id)==0) {
             counter++;
             printf("%s\n", plantillas[j].id_propietario);
             printf("%s\n", plantillas[j].id);
@@ -92,13 +92,13 @@ void part_config_plantilla() {
                         part_config_list_disponibles();
                         break;
                     case 3:
-                        part_config_add_jugador(idem_plantilla);
+                        part_config_add_jugador(idem_plantilla, logged_user);
                         break;
                     case 4:
-                        part_config_delete_jugador(idem_plantilla);
+                        part_config_delete_jugador(idem_plantilla, logged_user);
                         break;
                     case 5:
-                        part_menu();
+                        part_menu(logged_user);
                         break;
                 }
             }
@@ -109,17 +109,17 @@ void part_config_plantilla() {
             scanf("%i", &option2);
             switch (option2) {
                 case 1:
-                    part_config_plantilla();
+                    part_config_plantilla(logged_user);
                     break;
                 case 2:
-                    part_menu();
+                    part_menu(logged_user);
                     break;
             }
         }
     }
     else {
         printf("Usted no posee ninguna plantilla");
-        part_menu();
+        part_menu(logged_user);
     }
 }
 
@@ -143,58 +143,58 @@ void part_config_list_disponibles(){
     }
 }
 
-void part_config_add_jugador(char id[]){
+void part_config_add_jugador(char id[], int logged_user){
     char id_add[3];
     int counter=0;
     printf("\nSeleccion al jugador que desee unir a la plantilla:\n");
     for(int i=0; i < configuration.football_player_counter; ++i){
-        if(strcmp(jugador.id_team, id)!=0) {
+        if(strcmp(jugadores[logged_user].id_team, id)!=0) {
             printf("\n%s - %s\n", jugadores[i].id, jugadores[i].nombre);
         }
     }
     gets(id_add);
     for(int j=0; j<configuration.football_player_counter; ++j){
         if(strcmp(id_add, jugadores[j].id)==0) {
-            jugadores[i].id_team = id;
+            strcpy(jugadores[j].id_team, id);
             counter++;
             Core_football_players_update();
         }
     }
     if(counter!=0){
         printf("\nEse jugador no existe o ya se encuentra en su plantilla\n");
-        part_menu();
+        part_menu(logged_user);
     }
 }
 
-void part_config_delete_jugador(char id[]){
+void part_config_delete_jugador(char id[], int logged_user){
     char id_delete[3];
     int counter=0;
     printf("\nSeleccione al jugador que desee eliminar:\n");
     for(int i=0; i<configuration.football_player_counter; ++i){
-        if(strcmp(jugador[i].id_team, id)==0 )
+        if(strcmp(jugadores[i].id_team, id)==0 )
         printf("\n%s - %s\n", jugadores[i].id, jugadores[i].nombre);
     }
     gets(id_delete);
     for(int j=0; j<configuration.football_player_counter; j++){
         if(strcmp(id_delete, jugadores[j].id)==0) {
-            jugadores[i].id_team = "";
+            strcpy(jugadores[j].id_team, "");
             counter++;
             Core_football_players_update();
         }
     }
     if(counter!=0){
         printf("\nEse jugador no existe o no se encuentra en su plantilla\n");
-        part_menu();
+        part_menu(logged_user);
     }
 }
 //////////////////////////////////////////////////////////
 
-void part_list_plantilla(){
+void part_list_plantilla(int logged_user){
     int i, counter = 0;
     printf("\tListado de todas sus plantillas:\n");
 
     for (i=0; i<configuration.planter_counter ; ++i) {
-        if(strcmp(usuarios.id, plantillas[i].id_propietario)==0) {
+        if(strcmp(usuarios[logged_user].id, plantillas[i].id_propietario)==0) {
             counter++;
             printf("%s\n", plantillas[i].id);
             printf("%s\n", plantillas[i].nombre);
@@ -203,11 +203,11 @@ void part_list_plantilla(){
     }
     if(counter==0){
         printf("Usted no posee ninguna plantilla");
-        part_menu();
+        part_menu(logged_user);
     }
 }
 
-void part_eliminar_plantilla(){
+void part_eliminar_plantilla(int logged_user){
     int i, counter = 0;
     char idem[5];
 
@@ -216,19 +216,20 @@ void part_eliminar_plantilla(){
     for (i=0; i<configuration.planter_counter ; ++i) {
         if(strcmp(idem, plantillas[i].id)==0 && strcmp(usuarios[i].id, plantillas[i].id_propietario)==0){
             counter++;
-            plantillas[i].id_propietario = "";
-            plantillas[i].id = "";
-            plantillas[i].nombre = "";
+            strcpy(plantillas[i].id_propietario, "");
+            strcpy(plantillas[i].id, "");
+            strcpy(plantillas[i].nombre, "");
             plantillas[i].presupuesto = 0;
             plantillas[i].valoracion_total = 0;
         }
     }
     if(counter == 0) printf("\nEsa plantilla no existe o no es propietaria de ella\n");
     Core_planters_update();
+    part_menu(logged_user);
 }
 
-void part_ranking(){
-    int i, j, max = -1, ranking[configuration.planter_counter]
+void part_ranking(int logged_user){
+    int i, j, max = -1, ranking[configuration.planter_counter];
 
     for (i = 0; i < configuration.planter_counter; i++) {
         ranking[i] = 0;
@@ -253,6 +254,7 @@ void part_ranking(){
             }
         }
     }
+    part_menu(logged_user);
 }
 
 void part_exit(){
