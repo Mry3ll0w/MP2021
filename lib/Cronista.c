@@ -54,7 +54,6 @@ void cro_listar_equipos()
 
             printf("\t %i . %s\n",i, equipos[i].nombre);
         }
-        Core_teams_update();
     }
 
     else{
@@ -70,10 +69,13 @@ int i,j,opc;
 char actual_team_id[3];
 do{
 printf("\t Seleccione el equipo de la plantilla que quiera valorar: \n");
-cro_listar_equipos();
 scanf("%i",&i);
-strcpy(actual_team_id , equipos[i].id );
+system("pause");
 system("cls");
+printf("\t %s \n",equipos[i].nombre);
+fflush(stdin);
+strcpy(actual_team_id , equipos[i].id );
+
 
 for (j = 0; j < configuration.maxplayersperteam; ++j) {
 if(strcmp(actual_team_id,jugadores[j].id)==0)

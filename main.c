@@ -24,7 +24,7 @@ int main() {
             part_menu(logged_user);
         }
         else if (strcmp(usuarios[logged_user].role,"c")==0){
-            //Menu cronista
+            cro_menu();
         }
         printf("Deseas hacer alguna operacion mas?\n1)Si\t 2)No\n");
             scanf("%d",&exit_token);
