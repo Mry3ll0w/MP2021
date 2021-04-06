@@ -37,9 +37,9 @@ void Core_football_players_recovery(){
 void Core_config_restorer(){
 
     CONFIGFILE=fopen("config/configfile.txt","r");
-    assert(CONFIGFILE!=NULL);
+    assert(CONFIGFILE!=NULL && "No se ha leido correctamente el fichero de config");
     int lineaux;
-    for (int i = 0; i < 7; ++i) {//siempre vamos a te ner 3 parametros de configuracion
+    for (int i = 0; i < 8; ++i) {//siempre vamos a te ner 3 parametros de configuracion
         fscanf(CONFIGFILE,"%d",&lineaux);
         if(i==0){
             configuration.max_teams=lineaux;
@@ -61,6 +61,8 @@ void Core_config_restorer(){
         }
         else if(i==6){
             configuration.planter_counter=lineaux;
+        } else if (i==7){
+            configuration.assigned_players = lineaux;
         }
 
     }

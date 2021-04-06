@@ -1,6 +1,6 @@
 01
 FC_Barcelona
-0
+2
 02
 Real_Betis
 0
