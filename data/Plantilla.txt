@@ -1,9 +1,9 @@
-001
+03
 0001
 Jogador_Potensia_Bacana
 11
 0
-002
+03
 0002
 Mango_Clasico_Campeon
 10

@@ -41,19 +41,34 @@ void part_crear_plantilla(int logged_user){
     int presupuesto, puntuacion;
     char nombre_plant[32], id_plant[5];
     planter new_plant;
-    configuration.planter_counter++;
+    PLANTERFILE = fopen("data/plantilla.txt","a");
+    assert(PLANTERFILE!=NULL && "No se ha podido iniciar el fichero de plantillas");
     strcpy(new_plant.id_propietario, usuarios[logged_user].id);
-
+    configuration.planter_counter++;
     printf("\nIntroduzca identificador de plantilla:\n");
-        gets(id_plant);
+        scanf("%s", &id_plant);
+        fflush(stdin);
         strcpy(new_plant.id, id_plant);
     printf("\nIntroduzca su nombre:\n");
-        gets(nombre_plant);
+        scanf("%s", &nombre_plant);
+        fflush(stdin);
         strcpy(new_plant.nombre,nombre_plant);
     printf("\nIntroduzca el presupuesto para esta plantilla:\n");
         scanf("%i", &presupuesto);
         new_plant.presupuesto = presupuesto;
-        //Falta meter jugadores
+    new_plant.valoracion_total = 0;
+    fprintf(PLANTERFILE,"%s",new_plant.id_propietario);
+    fprintf(PLANTERFILE,"%c",'\n');
+    fprintf(PLANTERFILE,"%s",new_plant.id);
+    fprintf(PLANTERFILE,"%c",'\n');
+    fprintf(PLANTERFILE,"%s",new_plant.nombre);
+    fprintf(PLANTERFILE,"%c",'\n');
+    fprintf(PLANTERFILE,"%i",new_plant.presupuesto);
+    fprintf(PLANTERFILE,"%c",'\n');
+    fprintf(PLANTERFILE,"%i",new_plant.valoracion_total);
+    fprintf(PLANTERFILE,"%c",'\n');
+    fclose(PLANTERFILE);
+    configuration.planter_counter++;
     Core_planters_update();
     part_menu(logged_user);
 }
@@ -212,7 +227,8 @@ void part_eliminar_plantilla(int logged_user){
     char idem[5];
 
     printf("Introduzca identificador de plantilla que desea eliminar:\n");
-    gets(idem);
+    scanf("%s",&idem);
+    fflush(stdin);
     for (i=0; i<configuration.planter_counter ; ++i) {
         if(strcmp(idem, plantillas[i].id)==0 && strcmp(usuarios[i].id, plantillas[i].id_propietario)==0){
             counter++;
