@@ -6,7 +6,29 @@
 
 #IncludeRegexTransform: 
 
-D:/Proyectos/MP2021/lib/core.c
+D:/Proyectos/MP2021/lib/Cronista.c
+stdio.h
+-
+math.h
+-
+stdlib.h
+-
+string.h
+-
+cronista.h
+D:/Proyectos/MP2021/lib/Cronista.h
+core.h
+D:/Proyectos/MP2021/lib/core.h
+
+D:/Proyectos/MP2021/lib/Cronista.h
+stdio.h
+-
+math.h
+-
+stdlib.h
+-
+string.h
+-
 core.h
 D:/Proyectos/MP2021/lib/core.h
 

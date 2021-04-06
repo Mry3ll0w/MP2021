@@ -31,7 +31,7 @@ int main() {
         system("cls");
     }
 
-    
+    Core_end_execution();
 
     return 0;
 }
