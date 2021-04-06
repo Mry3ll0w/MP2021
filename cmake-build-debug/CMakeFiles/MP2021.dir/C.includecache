@@ -6,33 +6,11 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/lib/Cronista.c
-stdio.h
--
-math.h
--
-stdlib.h
--
-string.h
--
-cronista.h
-C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/lib/Cronista.h
+D:/Proyectos/MP2021/lib/core.c
 core.h
-C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/lib/core.h
+D:/Proyectos/MP2021/lib/core.h
 
-C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/lib/Cronista.h
-stdio.h
--
-math.h
--
-stdlib.h
--
-string.h
--
-core.h
-C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/lib/core.h
-
-C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/lib/core.h
+D:/Proyectos/MP2021/lib/core.h
 string.h
 -
 assert.h

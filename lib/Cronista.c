@@ -44,20 +44,16 @@ void cro_menu()
 
 void cro_listar_equipos()
 {
-    int i;
+
     printf("\tListado de todos los equipos:\n");
-
-    if(configuration.max_teams!=0) {
-        for (i = 0; i < configuration.max_teams; ++i) {
-            fflush(stdin);
-            printf("\t %i . %s\n",i, equipos[i].nombre);
-        }
-    }
-
-    else{
-        printf("\t No exixte ningun equipo aun.\n");
+    printf("Valor inicial=> %d\n",configuration.team_counter);
+    assert(configuration.max_teams!=0 && "\t No exixte ningun equipo aun.\n");
+    for (int i = 0; i < configuration.team_counter; ++i) {
+        //fflush(stdin);
+        printf("\t %i . %s\n",i, equipos[i].nombre);
 
     }
+
     system("pause");
     system("cls");
 
