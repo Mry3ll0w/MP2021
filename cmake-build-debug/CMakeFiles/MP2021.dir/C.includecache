@@ -6,50 +6,7 @@
 
 #IncludeRegexTransform: 
 
-<<<<<<< Updated upstream
-C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/lib/Cronista.c
-=======
-D:/MP Trabajo/MP2021/lib/Cronista.h
->>>>>>> Stashed changes
-stdio.h
--
-math.h
--
-stdlib.h
--
-string.h
--
-<<<<<<< Updated upstream
-cronista.h
-C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/lib/Cronista.h
-core.h
-C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/lib/core.h
-
-C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/lib/Cronista.h
-stdio.h
--
-math.h
--
-stdlib.h
--
-string.h
--
-core.h
-C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/lib/core.h
-
-C:/Users/Marcos/Desktop/Proyecto GitKraken MP 2021/MP2021/lib/core.h
-=======
-core.h
 D:/MP Trabajo/MP2021/lib/core.h
-
-D:/MP Trabajo/MP2021/lib/admin.h
-core.h
-D:/MP Trabajo/MP2021/lib/core.h
-assert.h
--
-
-D:/MP Trabajo/MP2021/lib/core.h
->>>>>>> Stashed changes
 string.h
 -
 assert.h
@@ -59,8 +16,6 @@ stdio.h
 stdlib.h
 -
 
-<<<<<<< Updated upstream
-=======
 D:/MP Trabajo/MP2021/lib/participante.c
 participante.h
 D:/MP Trabajo/MP2021/lib/participante.h
@@ -73,18 +28,3 @@ string.h
 
 D:/MP Trabajo/MP2021/lib/participante.h
 
-D:/MP Trabajo/MP2021/main.c
-stdio.h
--
-string.h
--
-lib/core.h
-D:/MP Trabajo/MP2021/lib/core.h
-lib/admin.h
-D:/MP Trabajo/MP2021/lib/admin.h
-lib/Cronista.h
-D:/MP Trabajo/MP2021/lib/Cronista.h
-lib/participante.h
-D:/MP Trabajo/MP2021/lib/participante.h
-
->>>>>>> Stashed changes
