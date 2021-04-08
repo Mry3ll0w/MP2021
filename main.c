@@ -6,7 +6,7 @@
 #include "lib/participante.h"
 
 int main() {
-    //system("music.bat");
+    system("music.bat");
     unsigned exit_token=1;
     unsigned logged_user;
     Core_data_recovery();
