@@ -220,6 +220,7 @@ void part_list_plantilla(int logged_user){
         printf("Usted no posee ninguna plantilla");
         part_menu(logged_user);
     }
+    part_menu(logged_user);
 }
 
 void part_eliminar_plantilla(int logged_user){

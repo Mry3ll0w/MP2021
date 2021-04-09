@@ -9,7 +9,7 @@
 
 void adm_new_team(){
     TEAMFILE = fopen("a","data/Equipos.txt");
-    assert(TEAMFILE!=NULL);//Si se ha podeido acceder al fichero
+    assert(TEAMFILE!=NULL);
 
     team temp_team;
     printf("Introduce el id\n");
@@ -21,8 +21,8 @@ void adm_new_team(){
     fprintf(TEAMFILE,"%s",temp_team.nombre);
     fprintf(TEAMFILE,"%c",'\n');
     fclose(TEAMFILE);
-
 }
+
 void adm_list_teams(){
     assert(CONFIGFILE!=NULL);
     for (int i = 0; i < configuration.team_counter ; ++i) {
