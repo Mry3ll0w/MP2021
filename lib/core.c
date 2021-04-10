@@ -306,10 +306,13 @@ void Core_User_Register() {
     fclose(USERFILE);
     //Actualizamos los ficheros
     configuration.user_counter++;
+<<<<<<< Updated upstream
     printf("Termino escritura\n");
     Core_config_update();
     printf("Termino updatee\n");
     Core_Users_recovery();
+=======
+>>>>>>> Stashed changes
 
 }//ok
 
