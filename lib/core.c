@@ -292,6 +292,7 @@ void Core_User_Register() {
     scanf("%s",temp_user.password);
     printf("\nIntroduce el rol que tendra: ");
     scanf("%s",temp_user.role);
+    /*
     //Escritura en el fichero
     fprintf(USERFILE,"%s",temp_user.id);
     fprintf(USERFILE,"%c",'\n');
@@ -305,14 +306,16 @@ void Core_User_Register() {
     fprintf(USERFILE,"%c",'\n');
     fclose(USERFILE);
     //Actualizamos los ficheros
+     */
     configuration.user_counter++;
-<<<<<<< Updated upstream
-    printf("Termino escritura\n");
-    Core_config_update();
-    printf("Termino updatee\n");
+    usuarios = realloc(usuarios,configuration.user_counter*sizeof(user));
+    strcpy(usuarios[configuration.user_counter-1].id,temp_user.id);
+    strcpy(usuarios[configuration.user_counter-1].role,temp_user.role);
+    strcpy(usuarios[configuration.user_counter-1].name_tag,temp_user.name_tag);
+    strcpy(usuarios[configuration.user_counter-1].nombre,temp_user.nombre);
+    strcpy(usuarios[configuration.user_counter-1].password,temp_user.password);
+    Core_Users_update();
     Core_Users_recovery();
-=======
->>>>>>> Stashed changes
 
 }//ok
 
