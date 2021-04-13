@@ -44,7 +44,6 @@ void part_crear_plantilla(int logged_user){
     PLANTERFILE = fopen("data/plantilla.txt","a");
     assert(PLANTERFILE!=NULL && "No se ha podido iniciar el fichero de plantillas");
     strcpy(new_plant.id_propietario, usuarios[logged_user].id);
-    configuration.planter_counter++;
     printf("\nIntroduzca identificador de plantilla:\n");
         scanf("%s", &id_plant);
         fflush(stdin);
@@ -58,10 +57,10 @@ void part_crear_plantilla(int logged_user){
         new_plant.presupuesto = presupuesto;
     new_plant.valoracion_total = 0;
     configuration.planter_counter++;
-    usuarios = realloc(usuarios,configuration.planter_counter*sizeof(user));
+    plantillas = realloc(plantillas,configuration.planter_counter*sizeof(user));
     strcpy(usuarios[logged_user].id,new_plant.id_propietario);
     strcpy(plantillas[configuration.planter_counter-1].id,new_plant.id);
-    plantillas[configuration.planter_counter-1].presupuesto=new_plant.presupuesto;
+    plantillas[configuration.planter_counter-1].presupuesto = new_plant.presupuesto;
     strcpy(plantillas[configuration.planter_counter-1].nombre,new_plant.nombre);
     Core_planters_update();
     part_menu(logged_user);
@@ -252,6 +251,7 @@ void part_ranking(int logged_user){
                 ranking[i] = max;
             }
         }
+        max = 0;
     }
     for(i = 3; i < configuration.planter_counter; i++) { //Imprimir solo los 3 primeros
         for (j = 0; j < configuration.planter_counter; j++) {
