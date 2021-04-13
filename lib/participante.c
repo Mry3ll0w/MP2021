@@ -61,9 +61,8 @@ void part_crear_plantilla(int logged_user){
     usuarios = realloc(usuarios,configuration.planter_counter*sizeof(user));
     strcpy(usuarios[logged_user].id,new_plant.id_propietario);
     strcpy(plantillas[configuration.planter_counter-1].id,new_plant.id);
-    strcpy(plantillas[configuration.planter_counter-1].presupuesto,new_plant.presupuesto);
+    plantillas[configuration.planter_counter-1].presupuesto=new_plant.presupuesto;
     strcpy(plantillas[configuration.planter_counter-1].nombre,new_plant.nombre);
-    configuration.planter_counter++;
     Core_planters_update();
     part_menu(logged_user);
 }
@@ -132,7 +131,7 @@ void part_config_plantilla(int logged_user) {
         part_menu(logged_user);
     }
 }
-error a partir de aqui abajo xd
+
 //////////FUNCIONES DENTRO DE CONFIGURACION///////////////
 void part_config_list_jugadores(char id[]){
     for (int i = 0; i < configuration.football_player_counter; ++i) {
