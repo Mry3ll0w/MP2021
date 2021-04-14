@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-D:/MP Trabajo/MP2021/lib/core.h
+D:/Proyectos/MP2021/lib/core.h
 string.h
 -
 assert.h
@@ -16,15 +16,15 @@ stdio.h
 stdlib.h
 -
 
-D:/MP Trabajo/MP2021/lib/participante.c
+D:/Proyectos/MP2021/lib/participante.c
 participante.h
-D:/MP Trabajo/MP2021/lib/participante.h
+D:/Proyectos/MP2021/lib/participante.h
 core.h
-D:/MP Trabajo/MP2021/lib/core.h
+D:/Proyectos/MP2021/lib/core.h
 stdio.h
 -
 string.h
 -
 
-D:/MP Trabajo/MP2021/lib/participante.h
+D:/Proyectos/MP2021/lib/participante.h
 

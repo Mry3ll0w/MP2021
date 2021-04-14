@@ -49,7 +49,7 @@ typedef struct{
 }user;
 
 typedef struct{
-    char id_propietario[4]; //debe coincidir con user.id
+    char id_propietario[3]; //debe coincidir con user.id
     char id[5];
     char nombre[32];
     int presupuesto; //se carga el presupuesto por defecto de config.txt

@@ -7,4 +7,10 @@
 -- Detecting C compile features - done
 -- Configuring done
 -- Generating done
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_CXX_FLAGS
+
+
 -- Build files have been written to: D:/Proyectos/MP2021/cmake-build-debug-coverage

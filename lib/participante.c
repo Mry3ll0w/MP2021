@@ -38,31 +38,34 @@ void part_menu(int logged_user){
 }
 
 void part_crear_plantilla(int logged_user){
-    int presupuesto, puntuacion;
-    char nombre_plant[32], id_plant[5];
     planter new_plant;
     PLANTERFILE = fopen("data/plantilla.txt","a");
     assert(PLANTERFILE!=NULL && "No se ha podido iniciar el fichero de plantillas");
     strcpy(new_plant.id_propietario, usuarios[logged_user].id);
-    printf("\nIntroduzca identificador de plantilla:\n");
-        scanf("%s", &id_plant);
-        fflush(stdin);
-        strcpy(new_plant.id, id_plant);
+    printf("\nIntroduzca identificador de plantilla(4 digitos):\n");
+        scanf("%s", new_plant.id);
     printf("\nIntroduzca su nombre:\n");
-        scanf("%s", &nombre_plant);
-        fflush(stdin);
-        strcpy(new_plant.nombre,nombre_plant);
+        scanf("%s", new_plant.nombre);
     printf("\nIntroduzca el presupuesto para esta plantilla:\n");
-        scanf("%i", &presupuesto);
-        new_plant.presupuesto = presupuesto;
+        scanf("%d", &new_plant.presupuesto);
     new_plant.valoracion_total = 0;
-    configuration.planter_counter++;
-    plantillas = realloc(plantillas,configuration.planter_counter*sizeof(user));
+    fprintf(PLANTERFILE,"%s",new_plant.id_propietario);
+    fprintf(PLANTERFILE,"%c",'\n');
+    fprintf(PLANTERFILE,"%s",new_plant.id);
+    fprintf(PLANTERFILE,"%c",'\n');
+    fprintf(PLANTERFILE,"%s",new_plant.nombre);
+    fprintf(PLANTERFILE,"%c",'\n');
+    fprintf(PLANTERFILE,"%d",new_plant.presupuesto);
+    fprintf(PLANTERFILE,"%c",'\n');
+    fprintf(PLANTERFILE,"%d",new_plant.valoracion_total);
+    fprintf(PLANTERFILE,"%c",'\n');
+
+
     strcpy(usuarios[logged_user].id,new_plant.id_propietario);
     strcpy(plantillas[configuration.planter_counter-1].id,new_plant.id);
     plantillas[configuration.planter_counter-1].presupuesto = new_plant.presupuesto;
     strcpy(plantillas[configuration.planter_counter-1].nombre,new_plant.nombre);
-    Core_planters_update();
+    Core_planters_recovery();
     part_menu(logged_user);
 }
 

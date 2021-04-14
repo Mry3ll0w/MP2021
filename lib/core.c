@@ -209,10 +209,16 @@ void Core_planters_update() {
     assert(configuration.planter_counter!=0 && "Fallo en la lectura de la configuracion inicial");
     PLANTERFILE=fopen("data/Plantilla.txt","w");
     for (int i = 0; i < configuration.planter_counter; ++i) {
-        if (strcmp(plantillas[i].id,"xx")!=0){
-
-        }
-
+        fprintf(PLANTERFILE,"%s",plantillas[i].id_propietario);
+        fprintf(PLANTERFILE,"%c",'\n');
+        fprintf(PLANTERFILE,"%s",plantillas[i].id);
+        fprintf(PLANTERFILE,"%c",'\n');
+        fprintf(PLANTERFILE,"%s",plantillas[i].nombre);
+        fprintf(PLANTERFILE,"%c",'\n');
+        fprintf(PLANTERFILE,"%d",plantillas[i].presupuesto);
+        fprintf(PLANTERFILE,"%c",'\n');
+        fprintf(PLANTERFILE,"%d",plantillas[i].valoracion_total);
+        fprintf(PLANTERFILE,"%c",'\n');
     }
     fclose(PLANTERFILE);
     Core_planters_recovery();
