@@ -1,6 +1,6 @@
 #include "core.h"
 //
-//Llama a los restauradores de cada struct (fisica a RAM)
+//Llama a los restauradores de cada struct (fisica -> RAM)
 void Core_data_recovery(){
     Core_config_restorer();
     Core_football_players_recovery();
@@ -119,13 +119,7 @@ void Core_end_execution(){exit(0);}
 
 //Nos permite la carga de datos a la estructura de los usuarios
 void Core_Users_recovery() {
-    /*Orden Lectura
-    char id[3];
-    char nombre[20];
-    char name_tag[5];
-    char password[8];
-    char role;//P articipante, C ronista, A dmim
-    */
+
     assert(configuration.user_counter!=0 && "No se ha cargado de forma correcta el archivo de configuracion");
     USERFILE = fopen("data/Usuarios.txt","r");
     assert(USERFILE!=NULL && "No se ha podido abrir/encontrar el archivo de Usuarios.txt");
@@ -136,13 +130,7 @@ void Core_Users_recovery() {
         fscanf(USERFILE, "%s",usuarios[i].name_tag);
         fscanf(USERFILE, "%s",usuarios[i].password);
         fscanf(USERFILE, "%s",usuarios[i].role);
-        /*
-        printf("%s\n",usuarios[i].id);
-        printf("%s\n",usuarios[i].nombre);
-        printf("%s\n",usuarios[i].name_tag);
-        printf("%s\n",usuarios[i].password);
-        printf("%s\n",usuarios[i].role);
-        */
+
     }
     fclose(USERFILE);
 }
@@ -173,15 +161,6 @@ void Core_football_players_update() {
 
 
 void Core_planters_recovery() {
-    /*
-     * typedef struct{
-        char id_propietario[4]; //debe coincidir con user.id
-        char id[5];
-        char nombre[32];
-        int presupuesto; //se carga el presupuesto por defecto de config.txt
-        int valoracion_total;//Default a 0
-        }planter;
-     */
     assert(configuration.planter_counter!=0 && "NO se ha podido leer de forma correcta la configuracion");
     PLANTERFILE = fopen("data/Plantilla.txt","r");
     assert(PLANTERFILE!=NULL && "Fallo de accesso del archivo de plantilla");
@@ -194,13 +173,7 @@ void Core_planters_recovery() {
         fscanf(PLANTERFILE,"%s",plantillas[i].nombre);
         fscanf(PLANTERFILE,"%d",&plantillas[i].presupuesto);
         fscanf(PLANTERFILE,"%d",&plantillas[i].valoracion_total);
-        /*
-        printf("%s\n",plantillas[i].id_propietario);
-        printf("%s\n",plantillas[i].id);
-        printf("%s\n",plantillas[i].nombre);
-        printf("%d\n",plantillas[i].presupuesto);
-        printf("%d\n",plantillas[i].valoracion_total);
-        */
+
     }
     fclose(PLANTERFILE);
 }
@@ -298,21 +271,6 @@ void Core_User_Register() {
     scanf("%s",temp_user.password);
     printf("\nIntroduce el rol que tendra: ");
     scanf("%s",temp_user.role);
-    /*
-    //Escritura en el fichero
-    fprintf(USERFILE,"%s",temp_user.id);
-    fprintf(USERFILE,"%c",'\n');
-    fprintf(USERFILE,"%s",temp_user.nombre);
-    fprintf(USERFILE,"%c",'\n');
-    fprintf(USERFILE,"%s",temp_user.name_tag);
-    fprintf(USERFILE,"%c",'\n');
-    fprintf(USERFILE,"%s",temp_user.password);
-    fprintf(USERFILE,"%c",'\n');
-    fprintf(USERFILE,"%s",temp_user.role);
-    fprintf(USERFILE,"%c",'\n');
-    fclose(USERFILE);
-    //Actualizamos los ficheros
-     */
     configuration.user_counter++;
     usuarios = realloc(usuarios,configuration.user_counter*sizeof(user));
     strcpy(usuarios[configuration.user_counter-1].id,temp_user.id);
